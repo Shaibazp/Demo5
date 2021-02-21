@@ -242,8 +242,8 @@ function myFunction() {
                                 
                                
                                 <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-700 text-grey-700 font-xsss d-inline-block"><i class="ti-mobile font-md float-left mr-3"></i>Preliminary Observations<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
-                                <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-700 text-grey-700 font-xsss d-inline-block"><i class="ti-mobile font-md float-left mr-3"></i>Broad Classification<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
-                                 <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-pie-chart font-md float-left mr-3"></i> Element Detection <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
+                                <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-plug font-md float-left mr-3"></i> Broad Classification  <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
+                                <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-pie-chart font-md float-left mr-3"></i> Element Detection <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                 <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-stats-up font-md float-left mr-3"></i> Solubility Tests  <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                 <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-harddrives font-md float-left mr-3"></i> Functional Group Identify  <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                 <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-game font-md float-left mr-3"></i> Derivative preparation  <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
@@ -260,12 +260,41 @@ function myFunction() {
                         </div>
                     </div>
                     
-                      
+                     
+                                        
+                                        <%
+            
+      try{
+          
+          
+             String split[];
+             String lines[];// = string.split("\\r?\\n");
+            Connection con=db.dbConnect.dbConnection();
+            PreparedStatement pstmt=con.prepareStatement("select * from chem_reation_1 where cases='Solid'");
+           
+            ResultSet rs=pstmt.executeQuery();
+            while(rs.next()){
+              
+              String principle=     rs.getString(3);
+               String instruction=      rs.getString(4); 
+                   String video=  rs.getString(5); 
+                  String procedure_solid=   rs.getString(6);
+                     String procedure_liquid=  rs.getString(7);
+                      String inference= rs.getString(8);
+                      String reagents= rs.getString(9);
+                         String reaction_video= rs.getString(10);
+                
+                        System.out.println(instruction);
+      
+              %>  
+              
+                                     
+            
                       <div class="col-lg-6 pl-md--2 pr-md--2 mt-sm--3" >
                         <div class="bg-white shadow-xs rounded-lg h-100 p-4 member-1">
                             <form action="#"   name="dummy"> 
                                 <div class="row">
-                                    <div class="col-sm-12 mb-2"><div class="fw-700 font-xxl mb-3" style="margin-top: -15px;">Broad Classification</div>
+                                    <div class="col-sm-12 mb-2"><div class="fw-700 font-xxl mb-3" style="margin-top: -15px;">Preliminary Observations</div>
  
                                         <div class="col-sm-12" style="margin-top: -15px;" > Instruction<textarea id="w3review1" rows="2" readonly class="auto_height"   oninput="auto_height(this)" name="instuction"    style="width: 100%; margin-top: -5px;" > </textarea></div>
                                      <div class="col-sm-12" style="margin-top: -10px;">Rational<textarea id="w3review2" name="w3review2" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
@@ -279,15 +308,24 @@ function myFunction() {
                                    </form>      
                            
                                   
-                                     
+                                    <%  
+                ////JOptionPane.showMessageDialog(null, "Login Successfully!!!!");
+               // new Dashboard().setVisible(true);                 
+                //setVisible(false);
+            }
+             con.close(); 
+        }catch(Exception e){
+           
+            System.out.println(e);
+        }
+
+            %>
           
             
                                     <div class="col-sm-12">
                                         <h4 class="mb-3 fw-600 font-xss mt-2">Promo Code</h4>
                                 
                                      
-<!--combobox for Classification--> 
-                                                                   
 <!--combobox for state--> 
                                     <div class="col-sm-12 mb-4"  style="margin-top:20px; ">
                                         <div class="custom-control mr-4   custom-control-inline">
@@ -380,8 +418,7 @@ function myFunction() {
                                             </select>      
                                         </div>
                                     </div>
- 
-  
+
 <!--Button--> 
                                     <div class="col-sm-12 mb-4" style="margin-top:20px; ">
                                         <div class="custom-control mr-4   custom-control-inline">
