@@ -28,7 +28,7 @@ function myFunction() {
                 var keys = document.dummy.p_name.value
                 
             
-                var urls = "xml.jsp?ok=" + keys
+                var urls = "xml1.jsp?ok=" + keys
                 if (window.XMLHttpRequest)
                 {// code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttp = new XMLHttpRequest();
@@ -43,10 +43,14 @@ function myFunction() {
                     if (xmlhttp.readyState == 4)
                     {
                         var some = xmlhttp.responseXML.documentElement;
-                        document.getElementById("w3review1").value = some.getElementsByTagName("empno")[0].childNodes[0].nodeValue;
-                        document.getElementById("w3review2").value = some.getElementsByTagName("empname")[0].childNodes[0].nodeValue;
-                        document.getElementById("w3review3").value = some.getElementsByTagName("empplace")[0].childNodes[0].nodeValue;
-                        // document.getElementById("sp").value = some.getElementsByTagName("empaddr")[0].childNodes[0].nodeValue;
+                        document.getElementById("Instruction").value = some.getElementsByTagName("Instruction")[0].childNodes[0].nodeValue;
+                        document.getElementById("Rational").value = some.getElementsByTagName("Rational")[0].childNodes[0].nodeValue;
+                        document.getElementById("Procedure").value = some.getElementsByTagName("Procedure")[0].childNodes[0].nodeValue;
+                        document.getElementById("Observation").value = some.getElementsByTagName("Observation")[0].childNodes[0].nodeValue;
+                        document.getElementById("Reagent").value = some.getElementsByTagName("Reagent")[0].childNodes[0].nodeValue;
+                        document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
+
+            // document.getElementById("sp").value = some.getElementsByTagName("empaddr")[0].childNodes[0].nodeValue;
                     }
                 }
 
@@ -263,41 +267,37 @@ function myFunction() {
                       
                       <div class="col-lg-6 pl-md--2 pr-md--2 mt-sm--3" >
                         <div class="bg-white shadow-xs rounded-lg h-100 p-4 member-1">
-                            <form action="#"   name="dummy"> 
+                            
                                 <div class="row">
                                     <div class="col-sm-12 mb-2"><div class="fw-700 font-xxl mb-3" style="margin-top: -15px;">Broad Classification</div>
  
-                                        <div class="col-sm-12" style="margin-top: -15px;" > Instruction<textarea id="w3review1" rows="2" readonly class="auto_height"   oninput="auto_height(this)" name="instuction"    style="width: 100%; margin-top: -5px;" > </textarea></div>
-                                     <div class="col-sm-12" style="margin-top: -10px;">Rational<textarea id="w3review2" name="w3review2" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
-                                    <div class="col-sm-12" style="margin-top: -10px;">Procedure<textarea id="w3review3" name="w3review3" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
-                                   <div class="col-sm-12" style="margin-top: -10px;">Observation<textarea id="w3review4" name="w3review4" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
-                                    <div class="col-sm-12" style="margin-top: -10px;">Reagent/s<textarea id="w3review5" name="w3review5" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -1px;"> </textarea></div>
-                                
+                                        <div class="col-sm-12" style="margin-top: -15px;" > Instruction<textarea id="Instruction" name="Instruction" rows="2"   class="auto_height"   oninput="auto_height(this)" name="instuction"    style="width: 100%; margin-top: -5px;" > </textarea></div>
+                                     <div class="col-sm-12" style="margin-top: -10px;">Rational<textarea id="Rational" name="Rational" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
+                                    <div class="col-sm-12" style="margin-top: -10px;">Procedure<textarea id="Procedure" name="Procedure" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
+                                   <div class="col-sm-12" style="margin-top: -10px;">Observation<textarea id="Observation" name="Observation" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
+                                    <div class="col-sm-12" style="margin-top: -10px;">Reagent/s<textarea id="Reagent" name="Reagent" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -1px;"> </textarea></div>
+                                    <div class="col-sm-12" style="margin-top: -10px;">Inference<textarea id="Inference" name="Inference" readonly rows="2" class="auto_height" oninput="auto_height(this)"  style="width: 100%;  color: red; margin-top: -1px;"> </textarea></div>
+
                                  <br>
                                     <div class="col-sm-6"><a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2">Proceed to Recharge</a></div>
-                                  <button name="p_name" onclick="loadXMLDoc()">Copy Text</button>
-                                   </form>      
-                           
-                                  
-                                     
-          
-            
-                                    <div class="col-sm-12">
-                                        <h4 class="mb-3 fw-600 font-xss mt-2">Promo Code</h4>
-                                
-                                     
+                               
+                                    
+                                      
 <!--combobox for Classification--> 
                                     <div class="col-sm-12 mb-4"  style="margin-top:20px; ">
                                         <div class="custom-control mr-4   custom-control-inline">
                                              <label for="Classification">Classification:</label>
                                         </div>
                                         <div class="custom-control mr-0   custom-control-inline">
-                                            <select name="cars" id="cars" style="width: 200px;">
-                                                <option value="volvo" >Select One</option>
+                                             <form action="#" name="dummy" >
+                                            <select name="p_name" style="width: 200px;" onchange="loadXMLDoc()">
+                                                <option>Select</option>  
                                                 <option value="Aliphatic">Aliphatic</option>
                                                 <option value="Aromatic">Aromatic</option>
-                                                 
-                                            </select>      
+                                                
+                                                
+                                            </select>   
+                                             </form>
                                         </div>
                                     </div>
  

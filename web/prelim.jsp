@@ -20,7 +20,7 @@ function myFunction() {
 }
 </script>
 
- <script type="text/javascript">
+  <script type="text/javascript">
             function loadXMLDoc()
             {
                 var xmlhttp;
@@ -43,10 +43,13 @@ function myFunction() {
                     if (xmlhttp.readyState == 4)
                     {
                         var some = xmlhttp.responseXML.documentElement;
-                        document.getElementById("w3review1").value = some.getElementsByTagName("empno")[0].childNodes[0].nodeValue;
-                        document.getElementById("w3review2").value = some.getElementsByTagName("empname")[0].childNodes[0].nodeValue;
-                        document.getElementById("w3review3").value = some.getElementsByTagName("empplace")[0].childNodes[0].nodeValue;
-                        // document.getElementById("sp").value = some.getElementsByTagName("empaddr")[0].childNodes[0].nodeValue;
+                        document.getElementById("Instruction").value = some.getElementsByTagName("Instruction")[0].childNodes[0].nodeValue;
+                        document.getElementById("Rational").value = some.getElementsByTagName("Rational")[0].childNodes[0].nodeValue;
+                        document.getElementById("Procedure").value = some.getElementsByTagName("Procedure")[0].childNodes[0].nodeValue;
+                        document.getElementById("Observation").value = some.getElementsByTagName("Observation")[0].childNodes[0].nodeValue;
+                        document.getElementById("Reagent").value = some.getElementsByTagName("Reagent")[0].childNodes[0].nodeValue;
+                       
+            // document.getElementById("sp").value = some.getElementsByTagName("empaddr")[0].childNodes[0].nodeValue;
                     }
                 }
 
@@ -54,6 +57,7 @@ function myFunction() {
                 xmlhttp.send();
             }
         </script>  
+
 
 
 
@@ -267,15 +271,15 @@ function myFunction() {
                                 <div class="row">
                                     <div class="col-sm-12 mb-2"><div class="fw-700 font-xxl mb-3" style="margin-top: -15px;">Broad Classification</div>
  
-                                        <div class="col-sm-12" style="margin-top: -15px;" > Instruction<textarea id="w3review1" rows="2" readonly class="auto_height"   oninput="auto_height(this)" name="instuction"    style="width: 100%; margin-top: -5px;" > </textarea></div>
-                                     <div class="col-sm-12" style="margin-top: -10px;">Rational<textarea id="w3review2" name="w3review2" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
-                                    <div class="col-sm-12" style="margin-top: -10px;">Procedure<textarea id="w3review3" name="w3review3" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
-                                   <div class="col-sm-12" style="margin-top: -10px;">Observation<textarea id="w3review4" name="w3review4" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
-                                    <div class="col-sm-12" style="margin-top: -10px;">Reagent/s<textarea id="w3review5" name="w3review5" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -1px;"> </textarea></div>
+                                        <div class="col-sm-12" style="margin-top: -15px;" > Instruction<textarea id="Instruction" rows="2"   class="auto_height"   oninput="auto_height(this)" name="Instruction"    style="width: 100%; margin-top: -5px;" > </textarea></div>
+                                     <div class="col-sm-12" style="margin-top: -10px;">Rational<textarea id="Rational" name="Rational" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
+                                    <div class="col-sm-12" style="margin-top: -10px;">Procedure<textarea id="Procedure" name="Procedure" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
+                                   <div class="col-sm-12" style="margin-top: -10px;">Observation<textarea id="Observation" name="Observation" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
+                                    <div class="col-sm-12" style="margin-top: -10px;">Reagent/s<textarea id="Reagent" name="Reagent" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -1px;"> </textarea></div>
                                 
                                  <br>
                                     <div class="col-sm-6"><a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2">Proceed to Recharge</a></div>
-                                  <button name="p_name" onclick="loadXMLDoc()">Copy Text</button>
+                                  <button name="p_name"  >Copy Text</button>
                                    </form>      
                            
                                   
@@ -285,21 +289,60 @@ function myFunction() {
                                     <div class="col-sm-12">
                                         <h4 class="mb-3 fw-600 font-xss mt-2">Promo Code</h4>
                                 
-                                     
+                                      <div class="col-sm-12 mb-4"  style="margin-top:20px; ">
+                                        <div class="custom-control mr-4   custom-control-inline">
+                                             <label for="Classification">Classification:</label>
+                                        </div>
+                                        <div class="custom-control mr-0   custom-control-inline">
+                                             <form action="#" name="dummy" >
+                                            <select name="p_name" style="width: 200px;" onchange="loadXMLDoc()">
+                                                <option>Select</option>  
+                                                <option value="Solid">Aliphatic</option>
+                                                <option value="Liquid">Aromatic</option>
+                                                
+                                                
+                                            </select>   
+                                             </form>
+                                        </div>
+                                    </div>
 <!--combobox for Classification--> 
                                                                    
 <!--combobox for state--> 
                                     <div class="col-sm-12 mb-4"  style="margin-top:20px; ">
                                         <div class="custom-control mr-4   custom-control-inline">
-                                             <label for="cars">Choose a State:</label>
+                                         
+                                             <label for="state">Choose a State:</label>
                                         </div>
                                         <div class="custom-control mr-0   custom-control-inline">
-                                            <select name="cars" id="cars" style="width: 200px;">
-                                                <option value="volvo" >Volvo</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="mercedes">Mercedes</option>
-                                                <option value="audi">Audi</option>
-                                            </select>      
+                                             <form action="#" name="dummy" >
+                                            <select name="state" id="state" style="width: 200px;"  >
+                                                <option value="Solid" >Solid</option>
+                                                <option value="Liquid">Liquid</option>
+                                                 
+                                            </select>  
+                                        </form>
+                                        </div>
+                                    </div>
+
+                                     <div class="col-sm-12 mb-4"   >
+                                        <div class="custom-control mr-4   custom-control-inline">
+                                             <label for="color:">Choose a Color:</label>
+                                        </div>
+                                        <div class="custom-control mr-0   custom-control-inline">
+                                           <select name="color" id="color" style="width: 200px;">
+                                                <option value="Black">Black</option>
+                                                <option value="yellow">Bright yellow</option>
+                                                <option value="Brown">Brown</option>
+                                                <option value="Colourless">Colourless</option>
+                                                <option value="dbrown">Dark brown</option>
+                                                <option value="dyellow">Dull yellow</option>
+                                                <option value="pink">Faint pink</option>
+                                                <option value="Magenta">Magenta</option>
+                                                <option value="red">Orange red</option>
+                                                <option value="obrown">Orange brown</option>
+                                                <option value="pyellow">Pale yellow</option>
+                                                <option value="White">White</option>
+                                            </select>         
                                         </div>
                                     </div>
  
@@ -307,29 +350,28 @@ function myFunction() {
 <!--combobox for Odour--> 
                                     <div class="col-sm-12 mb-4"  >
                                         <div class="custom-control mr-4   custom-control-inline">
-                                             <label for="color">Select a Odour:</label>
+                                             <label for="odour">Select a Odour:</label>
                                         </div>
                                         <div class="custom-control mr-0   custom-control-inline">
-                                            <select name="cars" id="cars" style="width: 200px;">
-                                                <option value="volvo">Volvo</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="mercedes">Mercedes</option>
-                                                <option value="audi">Audi</option>
-                                            </select>      
-                                        </div>
-                                    </div>
-
-<!--combobox for Odour--> 
-                                    <div class="col-sm-12 mb-4"  >
-                                        <div class="custom-control mr-4   custom-control-inline">
-                                             <label for="color">Select a Odour:</label>
-                                        </div>
-                                        <div class="custom-control mr-0   custom-control-inline">
-                                            <select name="cars" id="cars" style="width: 200px;">
-                                                <option value="volvo">Volvo</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="mercedes">Mercedes</option>
-                                                <option value="audi">Audi</option>
+                                            <select name="odour" id="odour" style="width: 200px;">
+                                                <option value="Acrid">Acrid</option>
+                                                <option value="Aggreable">Aggreable</option>
+                                                <option value="Aromatic">Aromatic</option>
+                                                <option value="Almond">Almond-like</option>
+                                                <option value="Cinnamon">Cinnamon-like</option>
+                                                <option value="Honeylike">Honey-like</option>
+                                                <option value="Irritating">Irritating</option>
+                                                <option value="lemonlike">lemon-like</option>
+                                                <option value="Odourless">Odourless</option>
+                                                <option value="Ointmentlike">Ointment-like</option>
+                                                <option value="Phenolic">Phenolic</option>
+                                                <option value="Pungent">Pungent</option>
+                                                <option value="SpicySweet">Spicy Sweet</option>
+                                                 <option value="Suffocating">Suffocating</option>
+                                                <option value="SweetAggreable">Sweet Aggreable</option>
+                                                <option value="VanillaFlavour">Vanilla Flavour</option>
+                                                <option value="Vinegarlike">Vinegar-like</option>
+                                                
                                             </select>      
                                         </div>
                                     </div>
