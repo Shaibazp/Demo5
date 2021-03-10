@@ -46,7 +46,7 @@
                 var btn1 = document.getElementById("myButton").innerHTML;
                 var btn2 = document.getElementById("state").value;
                 
-                alert(btn1);alert(btn2);
+                //alert(btn1);alert(btn2);
                 if (btn.value == "Submit1") 
                 {
                     btn.value = "Submit";
