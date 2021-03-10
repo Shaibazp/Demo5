@@ -31,6 +31,10 @@
                 document.getElementById("state").disabled=false;
                 document.getElementById("myButton").disabled=false;
             }
+            function enabledrop() 
+            {
+                document.getElementById("Melting1").disabled=false;
+            }
         </script>
         <script type="text/javascript">
             function hide()
@@ -38,15 +42,16 @@
                 //alert("Getting the message");
                 document.getElementById("start").style.visibility="hidden";
             }
+            
         </script>
         <script type="text/javascript">
             function myFunction() 
             {
                 var btn = document.getElementById("myButton");
                 var btn1 = document.getElementById("myButton").innerHTML;
-                var btn2 = document.getElementById("state").value;
+                var btn2 = document.getElementById("state");
                 
-                //alert(btn1);alert(btn2);
+                alert(btn1);alert(btn2);
                 if (btn.value == "Submit1") 
                 {
                     btn.value = "Submit";
@@ -78,24 +83,34 @@
                         ||btn.value == "Irritating" ||btn.value == "lemonlike"||btn.value == "Odourless" ||btn.value == "Ointmentlike"
                         ||btn.value == "Phenolic" ||btn.value == "Pungent"||btn.value == "SpicySweet" ||btn.value == "Suffocating"||btn.value == "SweetAggreable" ||btn.value == "VanillaFlavour"
                         ||btn.value == "Vinegarlike")
+                        {
+                            alert("in");
+                            if((btn2.value=="Solid"))
+                            {
+                                //document.getElementById("Melting").disabled=false;
+                                btn.value = "Melting Point";
+                                btn.innerHTML = "Odour Test";
+                            }
+                            else if((btn2.value=="Liquid"))
+                            {
+                                //document.getElementById("Boiling").disabled=false;
+                                btn.value = "Boiling Point";
+                                btn.innerHTML = "Odour Test";
+                            }
+                        }
+                else if (btn.value == "Melting Point")
                 {
-                     
-                    btn.value = "sss";
-                   btn.innerHTML = "Odour Test";
+                    document.getElementById("Melting").disabled=false;
+                    //btn.value = "mm";
+                    btn.innerHTML = "Melting Point";
                 }
-                else if ( btn.value=="sss" )
-                    {
-                    
-                        document.getElementById("cars").disabled=false;
-                        btn.value = "Melting Point";
-                        btn.innerHTML = "Melting Point";
-                    }
-                    else if( btn2.value == "Liquid")
-                    {
-                        btn.value = "Boiling Point";
-                        btn.innerHTML = "Boiling Point";
-                    
-                    }
+                
+                else if (btn.value == "Boiling Point")
+                {
+                    document.getElementById("Boiling").disabled=false;
+                    //btn.value = "BP";
+                    btn.innerHTML = "Boiling Point";
+                }
               
 
             }
@@ -556,7 +571,7 @@
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
                                                     <!-- <label for="color" >From:  </label> --> 
-                                                    <select name="cars" id="cars"  >
+                                                    <select name="cars" id="Melting"  disabled onchange="enabledrop()">
                                                    
                                                         <option value="25">25</option>
                                                         <option value="26">26</option>
@@ -889,7 +904,7 @@
 
                                                     </select>    
 
-                                                    <select name="cars" id="cars" style="margin-left: 10px;">
+                                                    <select name="cars" id="Melting1" style="margin-left: 10px;" disabled onchanged="hided()">
                                                         
                                                         <option value="26">26</option>
                                                         <option value="27">27</option>
@@ -1229,7 +1244,7 @@
                                                     <label for="cars">Boiling Point </label>
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
-                                                    <select name="cars" id="cars" style="width: 200px;">
+                                                    <select name="cars1" id="Boiling" style="width: 200px;" disabled >
                                                         <option value="40">40</option>
                                                         <option value="41">41</option>
                                                         <option value="42">42</option>
