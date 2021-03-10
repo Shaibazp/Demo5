@@ -9,9 +9,9 @@
     Connection conn = db.dbConnect.dbConnection();
     PreparedStatement ps = conn.prepareStatement("select * from chem_reation_1 where cases=? ");
     ps.setString(1, sn);
-    System.out.println("abc1=" + sn);
+    //System.out.println("abc1=" + sn);
     out.println("<emp>");
-    if (sn.equals("Solid") || sn.equals("Liquid")) {
+    if (sn.equals("Solid") || sn.equals("Liquid")|| sn.equals("Colour")|| sn.equals("Odour")) {
 
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
