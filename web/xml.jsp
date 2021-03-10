@@ -11,7 +11,7 @@
     ps.setString(1, sn);
     //System.out.println("abc1=" + sn);
     out.println("<emp>");
-    if (sn.equals("Solid") || sn.equals("Liquid")|| sn.equals("Colour")|| sn.equals("Odour")) {
+    if (sn.equals("Solid") || sn.equals("Liquid")|| sn.equals("Colour")|| sn.equals("Odour")|| sn.equals("Melting Point")) {
 
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
