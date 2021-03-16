@@ -51,7 +51,7 @@
                 var btn1 = document.getElementById("myButton").innerHTML;
                 var btn2 = document.getElementById("state");
                 
-                alert(btn1);alert(btn2);
+                //alert(btn1);alert(btn2);
                 if (btn.value == "Submit1") 
                 {
                     btn.value = "Submit";
@@ -60,10 +60,10 @@
                 else if (btn.value == "Solid"||btn.value == "Liquid") 
                 {
                     
-                    btn.value = "Colour";
+                    btn.value = "Colour Test";
                     btn.innerHTML = "Colour Test"; 
                 }
-                else if (btn.value == "Colour") 
+                else if (btn.value == "Colour Test") 
                 {
                     document.getElementById("color").disabled=false;
                 }
@@ -72,10 +72,10 @@
                         ||btn.value == "pyellow" ||btn.value == "White")
                 {
                     
-                    btn.value = "Odour";
-                    btn.innerHTML = "Odour";  
+                    btn.value = "Odour Test";
+                    btn.innerHTML = "Odour Test";  
                 }
-                else if (btn.value == "Odour")
+                else if (btn.value == "Odour Test")
                 {
                     document.getElementById("Odour").disabled=false;
                 }
@@ -84,12 +84,12 @@
                         ||btn.value == "Phenolic" ||btn.value == "Pungent"||btn.value == "SpicySweet" ||btn.value == "Suffocating"||btn.value == "SweetAggreable" ||btn.value == "VanillaFlavour"
                         ||btn.value == "Vinegarlike")
                         {
-                            alert("in");
+                            //alert("in");
                             if((btn2.value=="Solid"))
                             {
                                 //document.getElementById("Melting").disabled=false;
                                 btn.value = "Melting Point";
-                                btn.innerHTML = "Odour Test";
+                                btn.innerHTML = "Melting Point";
                             }
                             else if((btn2.value=="Liquid"))
                             {
@@ -115,28 +115,38 @@
 
             }
         </script>
+
         <script>
             function myFunctions() 
             {
                 var x = document.getElementById("state").value;
-                document.getElementById("myButton").innerHTML =  x;
-                document.getElementById("myButton").value =  x;
+                document.getElementById("myButton").innerHTML =  "Colour Test";
+                document.getElementById("myButton").value =  "Colour Test";
             }
         </script>
         <script>
             function myFunctionss() 
             {
                 var x1 = document.getElementById("color").value;
-                document.getElementById("myButton").innerHTML =  x1;
-                document.getElementById("myButton").value =  x1;
+                document.getElementById("myButton").innerHTML =  "Odour Test";
+                document.getElementById("myButton").value =  "Odour Test";
             }
         </script>
         <script>
             function myFunctionsss() 
             {
-                var x2 = document.getElementById("Odour").value;
-                document.getElementById("myButton").innerHTML =  x2;
-                document.getElementById("myButton").value =  x2;
+                var x2 = document.getElementById("state").value;
+                if
+                (x2== "Solid")
+                {
+                document.getElementById("myButton").innerHTML =  "Melting Point";
+                document.getElementById("myButton").value =  "Melting Point";
+            }
+            else 
+                {
+                document.getElementById("myButton").innerHTML =  "Boiling Point";
+                document.getElementById("myButton").value =  "Boiling Point";
+            }
             }
         </script>
          <!--========================================================-->
@@ -477,7 +487,7 @@
 
                                         <div class="col-sm-6"><a href="#"  class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2">Proceed to Recharge</a></div>
                                         <button id="start" onclick="start();enable();hide();">Start</button>
-                                        <button onclick="myFunction();loadXMLDoc(this.value)" id="myButton" value="Submit1" disabled>Submit</button><br /><br />
+                                        <button onclick="myFunction();loadXMLDoc(this.value);" id="myButton" value="Submit1" disabled>Submit</button><br /><br />
                                         <div class="col-sm-12">
                                            
                                             <!--combobox for Classification-->  

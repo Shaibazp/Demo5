@@ -12,7 +12,7 @@
     ResultSet rs = ps.executeQuery();
     //System.out.println("abc1=" + sn);
     out.println("<emp>");
-    if (sn.equals("Solid") || sn.equals("Liquid")|| sn.equals("Colour")|| sn.equals("Odour")|| sn.equals("Melting Point")) 
+    if (sn.equals("Solid") || sn.equals("Liquid")|| sn.equals("Colour Test")|| sn.equals("Odour Test")|| sn.equals("Melting Point")) 
     {
 
         
@@ -35,7 +35,7 @@
             conn.close();
         }
     } 
-    else if (sn.equals("Solid") || sn.equals("Liquid")|| sn.equals("Colour")|| sn.equals("Odour")|| sn.equals("Boiling Point")) 
+    else if (sn.equals("Solid") || sn.equals("Liquid")|| sn.equals("Colour Test")|| sn.equals("Odour Test")|| sn.equals("Boiling Point")) 
                 {
                     
                         if (rs.next()) 
