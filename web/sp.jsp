@@ -515,7 +515,7 @@
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
                                                    <form action="#" name="test" >
-                                                    <select name="color" id="color" style="width: 200px;" onchange="loadDATA();myFunctionss();myFunction()" disabled>
+                                                    <select name="color" id="color" style="width: 200px;" onchange="loadDATA();myFunctionss();" disabled>
                                                         <option>Select</option> 
                                                         <option value="Black">Black</option>
                                                         <option value="yellow">Bright yellow</option>
@@ -542,7 +542,7 @@
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
                                                     <form action="#" name="odrtest" >
-                                                    <select name="odour" id="Odour" style="width: 200px;" onchange="loadOdour();myFunctionsss();myFunction()" disabled>
+                                                    <select name="odour" id="Odour" style="width: 200px;" onchange="loadOdour();myFunctionsss();" disabled>
                                                         <option>Select</option> 
                                                         <option value="Acrid">Acrid</option>
                                                         <option value="Aggreable">Aggreable</option>
