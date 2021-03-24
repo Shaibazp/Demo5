@@ -149,13 +149,24 @@
             }
             }
         </script>
+        <script>
+            function higherv()
+            {
+                var1 = document.getElementById("Melting").value;
+                var2 = document.getElementById("Melting1").value;
+                if(var1>var2)
+                {
+                    alert("Please Select Higher Value.......");
+                }
+            }
+        </script>
          <!--========================================================-->
         <script type="text/javascript">
             function loadXMLDoc(str)
             {
                 var xmlhttp;
 
-                var keys = document.dummy.state.value
+                //var keys = document.dummy.state.value
 
                 if (str == "")
                 {
@@ -195,14 +206,18 @@
 
 
             <script type="text/javascript">
-            function loadDATA()
+            function loadDATA(str)
             {
                 var xmlhttp;
 
-                var keys = document.test.color.value
+                if (str == "")
+                {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
 
 
-                var urls = "xml.jsp?ok=" + keys
+                var urls = "xml.jsp?ok=" + str
                 if (window.XMLHttpRequest)
                 {// code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttp = new XMLHttpRequest();
@@ -229,14 +244,18 @@
         </script>  
 
          <script type="text/javascript">
-            function loadOdour()
+            function loadOdour(str)
             {
                 var xmlhttp;
 
-                var keys = document.odrtest.odour.value
+                if (str == "")
+                {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
 
 
-                var urls = "xml.jsp?ok=" + keys
+                var urls = "xml.jsp?ok=" + str
                 if (window.XMLHttpRequest)
                 {// code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttp = new XMLHttpRequest();
@@ -471,8 +490,8 @@
 
 
                         <div class="col-lg-6 pl-md--2 pr-md--2 mt-sm--3" >
-                            <div class="bg-white shadow-xs rounded-lg h-100 p-4 member-1">
-
+                            
+                                
                                 <div class="row">
                                     <div class="col-sm-12 mb-2"><div class="fw-700 font-xxl mb-3" style="margin-top: -15px;">Preliminary Observations</div>
 
@@ -485,9 +504,13 @@
 
                                         <br>
 
-                                        <div class="col-sm-6"><a href="#"  class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2">Proceed to Recharge</a></div>
+                                        <div class="col-sm-6">
+                                            <a href="#"  class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2">Proceed to Recharge</a></div>
                                         <button id="start" onclick="start();enable();hide();">Start</button>
                                         <button onclick="myFunction();loadXMLDoc(this.value);" id="myButton" value="Submit1" disabled>Submit</button><br /><br />
+                                        
+                                        <form action="result_1.jsp" methos="POST">
+                                            <input type="submit" id="submit" value="SUBMIT" >
                                         <div class="col-sm-12">
                                            
                                             <!--combobox for Classification-->  
@@ -496,7 +519,7 @@
                                                     <label for="state">Choose a State:</label>
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
-                                                    <form action="#" name="dummy" >
+                                                   
                                                         <select id="state"name="state" style="width: 200px;" onchange="loadXMLDoc(this.value);myFunctions()" disabled>
                                                             <option>Select</option>  
                                                             <option value="Solid">Solid</option>
@@ -504,7 +527,7 @@
 
 
                                                         </select>   
-                                                    </form>
+                                                    
                                                 </div>
                                             </div>
 
@@ -514,8 +537,8 @@
                                                     <label for="color:">Choose a Color:</label>
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
-                                                   <form action="#" name="test" >
-                                                    <select name="color" id="color" style="width: 200px;" onchange="loadDATA();myFunctionss();" disabled>
+                                                  
+                                                    <select name="color" id="color" style="width: 200px;" onchange="loadDATA(this.value);myFunctionss();" disabled>
                                                         <option>Select</option> 
                                                         <option value="Black">Black</option>
                                                         <option value="yellow">Bright yellow</option>
@@ -530,7 +553,7 @@
                                                         <option value="pyellow">Pale yellow</option>
                                                         <option value="White">White</option>
                                                     </select>    
-                                                   </form>
+                                                 
                                                 </div>
                                             </div>
 
@@ -541,8 +564,8 @@
                                                     <label for="odour">Select a Odour:</label>
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
-                                                    <form action="#" name="odrtest" >
-                                                    <select name="odour" id="Odour" style="width: 200px;" onchange="loadOdour();myFunctionsss();" disabled>
+                                                  
+                                                    <select name="odour" id="Odour" style="width: 200px;" onchange="loadOdour(this.value);myFunctionsss();" disabled>
                                                         <option>Select</option> 
                                                         <option value="Acrid">Acrid</option>
                                                         <option value="Aggreable">Aggreable</option>
@@ -562,7 +585,8 @@
                                                         <option value="VanillaFlavour">Vanilla Flavour</option>
                                                         <option value="Vinegarlike">Vinegar-like</option>
 
-                                                    </select>      
+                                                    </select> 
+                                                    
                                                 </div>
                                             </div>
 
@@ -581,7 +605,7 @@
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
                                                     <!-- <label for="color" >From:  </label> --> 
-                                                    <select name="cars" id="Melting"  disabled onchange="enabledrop()">
+                                                    <select name="MeltingFrom" id="Melting"  disabled onchange="enabledrop()">
                                                    
                                                         <option value="25">25</option>
                                                         <option value="26">26</option>
@@ -914,7 +938,7 @@
 
                                                     </select>    
 
-                                                    <select name="cars" id="Melting1" style="margin-left: 10px;" disabled onchanged="hided()">
+                                                    <select name="MeltingTo" id="Melting1" style="margin-left: 10px;" disabled onchange="higherv()">
                                                         
                                                         <option value="26">26</option>
                                                         <option value="27">27</option>
@@ -1254,7 +1278,7 @@
                                                     <label for="cars">Boiling Point </label>
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
-                                                    <select name="cars1" id="Boiling" style="width: 200px;" disabled >
+                                                    <select name="Boiling" id="Boiling" style="width: 200px;" disabled >
                                                         <option value="40">40</option>
                                                         <option value="41">41</option>
                                                         <option value="42">42</option>
@@ -1521,14 +1545,16 @@
                                                 </div>
                                             </div>
                                             <!--Button--> 
+                                        </div>
                                             
-
+                                                </form>
 
 
                                         </div>
                                     </div>
 
                                 </div>
+                        
                                 <div class="member-2" style="display: none;">
                                     <div class="card w-100 shadow-xs rounded-lg border-0">
                                         <!-- <div class="card-body w-100 bg-greylight p-3 border-bottom"><a href="#" class="mb-0 text-grey-800 fw-500 font-xsss"><i class="ti-angle-left text-grey-800 dark-text-white font-xssss mr-1"></i> Go Back</a></div> -->
@@ -1615,9 +1641,10 @@
                                 </div>
 
 
-                            </div>
+                            
 
                         </div>
+               
                     </div>            
                 </div>
 

@@ -1,8 +1,8 @@
+  
 <%@ page import="java.io.*,java.sql.*" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-
     response.setContentType("text/xml");
     String sn = request.getParameter("ok");
     System.out.println("abc=" + sn);
@@ -14,22 +14,18 @@
     out.println("<emp>");
     if (sn.equals("Solid") || sn.equals("Liquid")|| sn.equals("Colour Test")|| sn.equals("Odour Test")|| sn.equals("Melting Point")) 
     {
-
         
         if (rs.next()) {
-
             out.println("<Instruction>" + rs.getString(4) + "</Instruction>");
             out.println("<Rational>" + rs.getString(3) + "</Rational>");
             out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
             out.println("<Observation>" + rs.getString(8) + "</Observation>");
             out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
-
             if (sn.equals("Solid")) {
                 out.println("<Inference>" + "The compound exists in solid state indicating strong intermolecular forces amongst them. It further indicates either presence of carboxyl group/hydroxyl group/amino/nitro group in the molecule for hydrogen bond to exist between them, or planer aromatic rings for week Van der Waals forces to exist between them indicating that the sample is a polynuclear aromatic hydrocarbon. Determine the melting point of the compound." + "</Inference>");
             } else if (sn.equals("Liquid")) {
                 out.println("<Inference>" + "The compound exists in liquid state indicating few strong intermolecular forces amongst them. It further indicates either absence of carboxyl group/or hydroxyl group/amino/nitro group in the molecule for no hydrogen bond to exist between them, or absence of planer aromatic rings for no week Vander Waals forces to exist between them indicating that the sample is not a polynuclear aromatic hydrocarbon. Determine the boiling point of the compound." + "</Inference>");
             }
-
             rs.close();
             ps.close();
             conn.close();
@@ -40,13 +36,11 @@
                     
                         if (rs.next()) 
                         {
-
                             out.println("<Instruction>" + rs.getString(4) + "</Instruction>");
                             out.println("<Rational>" + rs.getString(3) + "</Rational>");
                             out.println("<Procedure>" + rs.getString(7) + "</Procedure>");
                             out.println("<Observation>" + rs.getString(8) + "</Observation>");
                             out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
-
                             if (sn.equals("Solid")) 
                             {
                                 out.println("<Inference>" + "The compound exists in solid state indicating strong intermolecular forces amongst them. It further indicates either presence of carboxyl group/hydroxyl group/amino/nitro group in the molecule for hydrogen bond to exist between them, or planer aromatic rings for week Van der Waals forces to exist between them indicating that the sample is a polynuclear aromatic hydrocarbon. Determine the melting point of the compound." + "</Inference>");
@@ -102,6 +96,4 @@
         
     }
     out.println("</emp>");
-
-
 %>
