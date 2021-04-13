@@ -2,31 +2,61 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String state=request.getParameter("state");
-    String mobile="8975774258";
+    String mobile1="8975774258";
     
 System.out.println(state );
 
     try
     {
         Connection conn = db.dbConnect.dbConnection();
-        PreparedStatement pstmt = conn.prepareStatement("insert into result_two_copy(state,mobile) values(?,?)");
-        pstmt.setString(1, state);
-        pstmt.setString(2, mobile);
-        
-        int s = pstmt.executeUpdate();
-        if (s > 0) 
-        {
-                    System.out.println("Uploaded successfully !");
-                    %>
+//        PreparedStatement pstmt=conn.prepareStatement("select * from mobile_number");
+//        ResultSet rs=pstmt.executeQuery();
+//        if( rs.next())
+//        {
+//            String name=rs.getString(1);
+//            String mobile1=rs.getString(2);
+                
+            PreparedStatement pstn1=conn.prepareStatement("select mobile from result_two_copy where mobile=?");
+            pstn1.setString(1,mobile1);
+            ResultSet rs1=pstn1.executeQuery();
+            
+            if(!rs1.next())
+            {
+                PreparedStatement ps=conn.prepareStatement("insert into result_two_copy values(?,?)");
+                ps.setString(1, state);
+                ps.setString(2, mobile1);
+         
+                ps.executeUpdate();
+                %>
 
-<script>
-    window.location = "sp_2.jsp";
+                    <script>
+                        window.location = "sp_3.jsp";
 
-</script>
+                    </script>
 
-<% 
-        }
-        
+                <%
+                ps.close();
+                
+            }
+            else
+            {
+                PreparedStatement ps  = conn.prepareStatement("update result_two_copy set  state=? where mobile=?");
+                ps.setString(1, state);
+                ps.setString(2, mobile1);
+       
+                ps .executeUpdate();
+                %>
+
+                    <script>
+                        window.location = "sp_3.jsp";
+
+                    </script>
+
+                <%
+
+            } 
+        //}
+        conn.close();   
     }   
     catch(Exception e)
     {

@@ -7,11 +7,11 @@
 <body>
  <%
  int i=0;
-  for (i=25;i<=300;i++){
+  for (i=25;i<=300;i++)
+  {
         System.out.println("<"+"option value="+i+">");
     }
  
  %>
- 
 </body>
 </html>

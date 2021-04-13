@@ -111,8 +111,6 @@
                     //btn.value = "BP";
                     btn.innerHTML = "Boiling Point";
                 }
-              
-
             }
         </script>
 

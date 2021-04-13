@@ -5,42 +5,75 @@
     String colour=request.getParameter("color");
     String odour=request.getParameter("odour");
     String mp_from=request.getParameter("MeltingFrom");
-
     String mp_to=request.getParameter("MeltingTo");
-
     String boiling_temp=request.getParameter("Boiling");
-
-    String mobile="8975774258";
+    String mobile1="8975774258";
     
-System.out.println(state +"=="+colour+"=="+odour+"=="+mp_from+"=="+mp_to+"=="+boiling_temp);
+    System.out.println(state +"=="+colour+"=="+odour+"=="+mp_from+"=="+mp_to+"=="+boiling_temp);
 
     try
     {
         Connection conn = db.dbConnect.dbConnection();
-        PreparedStatement pstmt = conn.prepareStatement("insert into result_one_copy(state,colour,odour,mp_from,mp_to,boiling_temp,mobile) values(?,?,?,?,?,?,?)");
-        pstmt.setString(1, state);
-        pstmt.setString(2, colour);
-        pstmt.setString(3, odour);
-        pstmt.setString(4, mp_from);
-        pstmt.setString(5, mp_to);
-        pstmt.setString(6, boiling_temp);
-        pstmt.setString(7, mobile);
-        
-        int s = pstmt.executeUpdate();
-        if (s > 0) 
-        {
-                    System.out.println("Uploaded successfully !");
-                    %>
+//        PreparedStatement pstmt=conn.prepareStatement("select * from mobile_number");
+//        ResultSet rs=pstmt.executeQuery();
+//        if( rs.next())
+//        {
+//            String name=rs.getString(1);
+//            String mobile1=rs.getString(2);
+                
+            PreparedStatement pstn1=conn.prepareStatement("select mobile from result_one_copy where mobile=?");
+            pstn1.setString(1,mobile1);
+            ResultSet rs1=pstn1.executeQuery();
+            
+            if(!rs1.next())
+            {
+          
+                PreparedStatement ps=conn.prepareStatement("insert into result_one_copy values(?,?,?,?,?,?,?)");   
+                ps.setString(1, state);
+                ps.setString(2, colour);
+                ps.setString(3, odour);
+                ps.setString(4, mp_from);
+                ps.setString(5, mp_to);
+                ps.setString(6, boiling_temp);
+                ps.setString(7, mobile1);
+                ps.executeUpdate();
+                
+                %>
+                    <script>
+                        window.location = "sp_2.jsp";
 
-<script>
-    window.location = "sp_2.jsp";
+                    </script>
 
-</script>
+                <%
+                ps.close();
 
-<% 
-        }
-        
-    }   
+            }
+            else
+            {
+                PreparedStatement ps  = conn.prepareStatement("update result_one_copy set  state=?, colour=?, odour=?, mp_from=?, mp_to=?, boiling_temp=? where mobile=?");
+                ps.setString(1, state);
+                ps.setString(2, colour);
+                ps.setString(3, odour);
+                ps.setString(4, mp_from);
+                ps.setString(5, mp_to);
+                ps.setString(6, boiling_temp);
+                ps.setString(7, mobile1);
+       
+                ps .executeUpdate();
+                %>
+                    <script>
+                        window.location = "sp_2.jsp";
+
+                    </script>
+
+                <%
+
+            }
+            
+        //}
+        conn.close();
+           
+    }
     catch(Exception e)
     {
         System.out.println(e);
