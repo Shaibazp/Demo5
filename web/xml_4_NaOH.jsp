@@ -35,10 +35,12 @@
                 out.println("<emp>");
                 if (ans.equals("Aromatic")) 
                 {
+                    out.println("<Instruction>aa</Instruction>");
                     out.println("<Inference>The compound can be tested for presence of a carboxylic acid / phenol.</Inference>");
                 } 
                 else if (ans.equals("Aliphatic") )
                 {
+                    out.println("<Instruction>aa</Instruction>");
                     out.println("<Inference>The compound can be tested for presence of a carboxylic acid.</Inference>");
                 }
                 out.println("</emp>");
@@ -70,7 +72,6 @@
                 while (rst4.next()) 
                 {
                     String solid = rst4.getString(1);
-                    out.println("<emp>");
                     
                     PreparedStatement pst = conn.prepareStatement("Select * from result_two_copy where mobile=?");
                     pst.setString(1, mobile1);
@@ -92,25 +93,40 @@
 
                             if (nitro.equals("Positive")) 
                             {
-                                System.out.println("in...........");
-                                out.println("<Instruction>Click for 5% HCl</Instruction>");
-
+                                out.println("<emp>");
+                                out.println("<Instruction>bb</Instruction>");
+//                                System.out.println("in...........");
+//                                out.println("<Instruction>Click for 5% HCl</Instruction>");
+                                if (ans.equals("Aromatic")) 
+                                {
+                                    out.println("<Instruction>aa</Instruction>");
+                                    out.println("<Inference>The compound cannot be tested for the presence of carboxylic acid or phenol during Functional Group Identification.</Inference>");
+                                } 
+                                else if (ans.equals("Aliphatic")) 
+                                {
+                                    out.println("<Instruction>aa</Instruction>");
+                                    out.println("<Inference>The compound cannot be tested for the presence of carboxylic acid during Functional Group Identification.</Inference>");
+                                }
+                                out.println("</emp>");
                             } 
                             else if (nitro.equals("Negtive") || sulphur.equals("Negative")) 
                             {
-                                out.println("<Instruction>Click for H2So4</Instruction>");
-
+                                out.println("<emp>");
+//                                out.println("<Instruction>Click for H2So4</Instruction>");
+                                out.println("<Instruction>cc</Instruction>");
+                                if (ans.equals("Aromatic")) 
+                                {
+                                    out.println("<Instruction>aa</Instruction>");
+                                    out.println("<Inference>The compound cannot be tested for the presence of carboxylic acid or phenol during Functional Group Identification.</Inference>");
+                                } 
+                                else if (ans.equals("Aliphatic")) 
+                                {
+                                    out.println("<Instruction>aa</Instruction>");
+                                    out.println("<Inference>The compound cannot be tested for the presence of carboxylic acid during Functional Group Identification.</Inference>");
+                                }
+                                out.println("</emp>");
                             }
-                        }
-
-                        if (ans.equals("Aromatic")) 
-                        {
-                            out.println("<Inference>The compound cannot be tested for the presence of carboxylic acid or phenol during Functional Group Identification.</Inference>");
-                        } else if (ans.equals("Aliphatic")) 
-                        {
-                            out.println("<Inference>The compound cannot be tested for the presence of carboxylic acid during Functional Group Identification.</Inference>");
-                        }
-                        out.println("</emp>");
+                        } 
                     }
 
                 }

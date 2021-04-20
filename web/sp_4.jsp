@@ -23,6 +23,8 @@
 
                 document.getElementById("myButton").disabled = false;
                 document.getElementById("Water").disabled = false;
+                document.getElementById("myButton").style.visibility='visible';
+                document.getElementById("submit").style.visibility='hidden';
             }
         </script>
         <script type="text/javascript">
@@ -57,8 +59,11 @@
             {
                 if (document.getElementById('Water').value == "Yes")
                 {
+                    document.getElementById("HCL").style.visibility = 'hidden';
                     document.getElementById('ether').style.visibility = 'visible';
                     document.getElementById('NaOH').style.visibility = 'hidden';
+                    document.getElementById("myButton").style.visibility='visible';
+                    document.getElementById("submit").style.visibility='hidden';
                     document.getElementById("myButton").value = "Test for  solubility in Diethyl ether";
                     document.getElementById("myButton").innerHTML = "Click for Ether Test";
                     document.getElementById("Inference").value = "The compound should be tested for carboxylic acid / polyhydric alcohols. ";
@@ -66,6 +71,8 @@
                 } 
                 else
                 {
+                    document.getElementById("myButton").style.visibility='visible';
+                    document.getElementById("submit").style.visibility='hidden';
                     document.getElementById('NaOH').style.visibility = 'visible';
                     document.getElementById('ether').style.visibility = 'hidden';
                     document.getElementById("myButton").value = "NaOH Test";
@@ -142,8 +149,17 @@
                     {
                         var some = xmlhttp.responseXML.documentElement;
                         document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
-
-                        // document.getElementById("sp").value = some.getElementsByTagName("empaddr")[0].childNodes[0].nodeValue;
+                        var a= some.getElementsByTagName("op")[0].childNodes[0].nodeValue;
+                        if(a=="aa")
+                        {
+                            document.getElementById("myButton").style.visibility='hidden';
+                            document.getElementById("submit").style.visibility='visible';
+                        }
+                        else if(a=="bb")
+                        {
+                            document.getElementById("myButton").style.visibility='hidden';
+                            document.getElementById("submit").style.visibility='visible';
+                        }
                     }
                 }
 
@@ -180,18 +196,27 @@
                         var some = xmlhttp.responseXML.documentElement;
                         document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
                         var a = some.getElementsByTagName("Instruction")[0].childNodes[0].nodeValue;
-                        if(a=="Click for 5% HCl")
+                        if(a=="aa")
+                        {
+                            document.getElementById("myButton").style.visibility='hidden';
+                            document.getElementById("submit").style.visibility='visible';
+                        }
+                        else if(a=="bb")
                         {
                             document.getElementById("HCL").style.visibility = 'visible';
                             document.getElementById("myButton").value = "HCL Test";
                             document.getElementById("myButton").innerHTML = "Click for 5% HCl";
+                            document.getElementById("myButton").style.visibility='visible';
+                            document.getElementById("submit").style.visibility='hidden';
                         }
-                        else if(a=="Click for H2So4")
+                        else if(a=="cc")
                         {
-                            alert("Click for H2So4");
+                            //alert("Click for H2So4");
                             document.getElementById("h2o").style.visibility = 'visible';
                             document.getElementById("myButton").value = "H2SO4 Test";
                             document.getElementById("myButton").innerHTML = "Click for H2So4";
+                            document.getElementById("myButton").style.visibility='visible';
+                            document.getElementById("submit").style.visibility='hidden';
                         }
                     }
                 }
@@ -228,7 +253,8 @@
                     {
                         var some = xmlhttp.responseXML.documentElement;
                         document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
-
+                        document.getElementById("myButton").style.visibility='hidden';
+                        document.getElementById("submit").style.visibility='visible';
                         // document.getElementById("sp").value = some.getElementsByTagName("empaddr")[0].childNodes[0].nodeValue;
                     }
                 }
@@ -265,7 +291,8 @@
                     {
                         var some = xmlhttp.responseXML.documentElement;
                         document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
-
+                        document.getElementById("myButton").style.visibility='hidden';
+                        document.getElementById("submit").style.visibility='visible';
                     }
                 }
 
@@ -496,7 +523,7 @@
                                     <button onclick="loadXMLDoc(this.value);enablebtn();" id="myButton" value="submit" disabled>Submit</button><br /><br />
 
                                     <form action="result_4.jsp" methos="POST">
-                                        <input type="submit" id="submit" value="SUBMIT"  style="visibility: visible;">
+                                        <input type="submit" id="submit" value="SUBMIT"  style="visibility: hidden;">
                                         <div class="col-sm-12">
                                             <!--combobox for Classification-->  
                                             <div class="col-sm-12 mb-4"  style="margin-top:20px; ">
@@ -547,7 +574,7 @@
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
                                                     <select id="AqHCL" name="AqHCL" style="width: 200px;" onchange="loadDATA3(this.value);" disabled>
-                                                        <option>Select Answer</option>  
+                                                        <option>Select</option>  
                                                         <option value="Yes">Yes</option>
                                                         <option value="No">No</option>
                                                     </select>   
@@ -561,7 +588,7 @@
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
                                                     <select id="H2So4" name="H2So4" style="width: 200px;" onchange="loadDATA4(this.value);" disabled>
-                                                        <option>Select Answer</option>  
+                                                        <option>Select</option>  
                                                         <option value="Yes">Yes</option>
                                                         <option value="No">No</option>
                                                     </select>   

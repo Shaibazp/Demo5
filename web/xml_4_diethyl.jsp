@@ -37,6 +37,7 @@
             pstmt .setString(1,mobile1);
             ResultSet rs=pstmt.executeQuery();
             out.println("<emp>");
+            out.println("<op>aa</op>");
             while (rs.next()) 
             {
                 String nitro = rs.getString(1);
@@ -45,15 +46,15 @@
                 System.err.println("Nitro/Sulp/Halogen11" + nitro + sulphur + halogen);
                 if (sn.equals("Yes") && nitro.equals("Positive")) 
                 {
-                    out.println("<Inference>The compound can be tested for the\n presence of amine group.</Inference>");
+                    out.println("<Inference>The compound can be tested for the presence of amine group.</Inference>");
                 } 
                 else if (sn.equals("Yes") && ans.equals("Aromatic"))
                 {
-                    out.println("<Inference>The compound can be tested for the\n presence of phenol.</Inference>");
+                    out.println("<Inference>The compound can be tested for the presence of phenol.</Inference>");
                 }
                 else if (sn.equals("Yes"))
                 {
-                    out.println("<Inference>The compound can be tested for the presence \nof carbonyl group,carboxyl group, ester,\n alcohol, or ether.</Inference>");
+                    out.println("<Inference>The compound can be tested for the presence of carbonyl group,carboxyl group, ester, alcohol, or ether.</Inference>");
                 }
                 out.println("</emp>");
             }
@@ -92,6 +93,7 @@
            pstmt .setString(1,mobile1);
             ResultSet rs=pstmt.executeQuery();
             out.println("<emp>");
+            out.println("<op>bb</op>");
             while (rs.next()) 
             {
                 String nitro = rs.getString(1);
@@ -103,16 +105,16 @@
                 {
                     if (sn.equals("No") && nitro.equals("Positive")) 
                     {
-                        out.println("<Inference>The compound can be tested for the\n presence of an amide.</Inference>");
+                        out.println("<Inference>The compound can be tested for the presence of an amide.</Inference>");
                     } 
                     else if (sn.equals("No")) 
                     {
-                        out.println("<Inference>The compound can be tested for the presence of \ncarboxyl group, polyhydric alcohol or carbonyl group,\n  ester, alcohol, ether.</Inference>");
+                        out.println("<Inference>The compound can be tested for the presence of carboxyl group, polyhydric alcohol or carbonyl group,  ester, alcohol, ether.</Inference>");
                     }
                 } 
                 else 
                 {
-                    out.println("<Inference>The compound can be tested for the presence of \ncarboxyl group, polyhydric alcohol or carbonyl group,\n  ester, alcohol, ether.</Inference>");
+                    out.println("<Inference>The compound can be tested for the presence of carboxyl group, polyhydric alcohol or carbonyl group,  ester, alcohol, ether.</Inference>");
                 }
                 
                 out.println("</emp>");

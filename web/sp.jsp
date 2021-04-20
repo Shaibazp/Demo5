@@ -61,7 +61,8 @@
                 {
                     
                     btn.value = "Colour Test";
-                    btn.innerHTML = "Colour Test"; 
+                    btn.innerHTML = "Colour Test";
+                    document.getElementById("submit").style.visibility='hidden';
                 }
                 else if (btn.value == "Colour Test") 
                 {
@@ -101,15 +102,21 @@
                 else if (btn.value == "Melting Point")
                 {
                     document.getElementById("Melting").disabled=false;
+                    document.getElementById("Boiling").disabled=true;
                     //btn.value = "mm";
                     btn.innerHTML = "Melting Point";
+                    
                 }
                 
                 else if (btn.value == "Boiling Point")
                 {
                     document.getElementById("Boiling").disabled=false;
+                    document.getElementById("Melting").disabled=true;
+                    document.getElementById("Melting1").disabled=true;
                     //btn.value = "BP";
                     btn.innerHTML = "Boiling Point";
+                    document.getElementById("submit").style.visibility='visible';
+                    document.getElementById("myButton").style.visibility='hidden';
                 }
             }
         </script>
@@ -120,6 +127,9 @@
                 var x = document.getElementById("state").value;
                 document.getElementById("myButton").innerHTML =  "Colour Test";
                 document.getElementById("myButton").value =  "Colour Test";
+                document.getElementById("submit").style.visibility='hidden';
+                document.getElementById("myButton").style.visibility='visible';
+                
             }
         </script>
         <script>
@@ -155,6 +165,11 @@
                 if(var1>var2)
                 {
                     alert("Please Select Higher Value.......");
+                }
+                else
+                {
+                    document.getElementById("submit").style.visibility='visible';
+                    document.getElementById("myButton").style.visibility='hidden';
                 }
             }
         </script>
@@ -508,7 +523,7 @@
                                         <button onclick="myFunction();loadXMLDoc(this.value);" id="myButton" value="Submit1" disabled>Submit</button><br /><br />
                                         
                                         <form action="result_1.jsp" methos="POST">
-                                            <input type="submit" id="submit" value="SUBMIT" >
+                                            <input type="submit" id="submit" value="SUBMIT" style="visibility: hidden;">
                                         <div class="col-sm-12">
                                            
                                             <!--combobox for Classification-->  

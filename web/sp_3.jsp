@@ -22,6 +22,8 @@
             {
                 
                 document.getElementById("myButton").disabled=false;
+                document.getElementById("myButton").style.visibility='visible';
+                document.getElementById("submit").style.visibility='hidden';
             }
         </script>
         <script type="text/javascript">
@@ -59,12 +61,16 @@
                 
                 if (btn1.value == "Positive") 
                 {
+                    document.getElementById("myButton").style.visibility='visible';
+                    document.getElementById("submit").style.visibility='hidden';
                     document.getElementById("myButton").value="Test for Presence of Sulphur";
                     document.getElementById("myButton").innerHTML="Sulphur Test";
                     document.getElementById("Inference").value ="The compound can be tested for the presence of amines/nitriles/hydrazines/nitro function, or an amide  during Functional Group Identification. ";
                 }
                 else if (btn1.value == "Negative") 
                 {
+                    document.getElementById("myButton").style.visibility='visible';
+                    document.getElementById("submit").style.visibility='hidden';
                     document.getElementById("myButton").value="Test for Presence of Sulphur";
                     document.getElementById("myButton").innerHTML="Sulphur Test";
                     document.getElementById("Inference").value ="The compound should not be tested for the presence of primary, secondary and tertiary aliphatic amine, hydrazine, nitrile, nitro compound, or an amide group.";
@@ -82,19 +88,27 @@
                     document.getElementById("myButton").innerHTML="Halogen Test";
                     if((btn2.value =="Positive")&& (btn1.value =="Positive"))
                     {
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                         //alert(btn1.value);alert(btn2.value);
                         document.getElementById("Inference").value ="The compound can be tested for the presence of thiol/sulphonic acid/sulphone/sulphinic acid and sulphonamide during Functional Group Identification.";
                     }
                     else if(btn2.value ==("Negative")&&btn1.value ==("Negative"))
                     {
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                         document.getElementById("Inference").value ="The compound cannot be tested for the presence of  thiol/sulphonic acid/sulphone/sulphinic acid/sulphonyl halide/sulphonamide during Functional Group Identification.";
                     }
                     else if(btn2.value ==("Negative")&&btn1.value ==("Positive"))
                     {
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                         document.getElementById("Inference").value ="The compound cannot be tested for the presence of thiol/sulphonic acid/sulphone/sulphinic acid/sulphonyl halide/sulphonamide during Functional Group Identification.";
                     }
                     else if(btn2.value ==("Positive")&&btn1.value ==("Negative"))
                     {
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                         document.getElementById("Inference").value ="The compound can be tested for the presence of thiol/sulphonic acid/sulphone/sulphinic acid/sulphonyl halide during Functional Group Identification.";
                     }
                     
@@ -106,18 +120,26 @@
                     document.getElementById("myButton").innerHTML="Halogen Test";
                     if(btn2.value ==("Positive")&&btn1.value ==("Positive"))
                     {
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                         document.getElementById("Inference").value ="The compound can be tested for the presence of thiol/sulphonic acid/sulphone/sulphinic acid and sulphonamide during Functional Group Identification.";
                     }
                     else if(btn2.value ==("Negative")&&btn1.value ==("Negative"))
                     {
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                         document.getElementById("Inference").value ="The compound cannot be tested for the presence of  thiol/sulphonic acid/sulphone/sulphinic acid/sulphonyl halide/sulphonamide during Functional Group Identification.";
                     }
                     else if(btn2.value ==("Negative")&&btn1.value ==("Positive"))
                     {
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                         document.getElementById("Inference").value ="The compound cannot be tested for the presence of thiol/sulphonic acid/sulphone/sulphinic acid/sulphonyl halide/sulphonamide during Functional Group Identification.";
                     }
                     else if(btn2.value ==("Positive")&&btn1.value ==("Negative"))
                     {
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                         document.getElementById("Inference").value ="The compound can be tested for the presence of thiol/sulphonic acid/sulphone/sulphinic acid/sulphonyl halide during Functional Group Identification.";
                     }
                 }
@@ -132,13 +154,15 @@
                 var btn3 = document.getElementById("Halogen");
                 if (btn3.value == "Positive")
                 {
-                    
+                    document.getElementById("myButton").style.visibility='visible';
+                    document.getElementById("submit").style.visibility='hidden';
                     document.getElementById("Inference").value ="The compound should be tested for differentiation test to check the presence of chloro or bromo group.";
                    
                 }
                 else if (btn3.value == "Negative") 
                 {
-                    
+                    document.getElementById("myButton").style.visibility='visible';
+                    document.getElementById("submit").style.visibility='hidden';
                     document.getElementById("Inference").value ="The compound does not contain any halo group."; 
                 }
             }
@@ -152,27 +176,34 @@
                 {
                     
                     document.getElementById("Inference").value ="The compound can be tested for presence of any chloro containing functional group.";
-                   
+                    document.getElementById("myButton").style.visibility='hidden';
+                    document.getElementById("submit").style.visibility='visible';
                 }
                 else if (btn.value == "Bromine") 
                 {
-                    
+                    document.getElementById("myButton").style.visibility='hidden';
+                    document.getElementById("submit").style.visibility='visible';
                     document.getElementById("Inference").value ="The compound can be tested for presence of any bromo containing functional group."; 
                 }
             }
             </script>
             <script>
                 function yesnoCheck() 
+                {
+                    if (document.getElementById('Halogen').value=="Positive") 
                     {
-                        if (document.getElementById('Halogen').value=="Positive") 
-                        {
-                            document.getElementById('show').style.visibility = 'visible';
-                            document.getElementById("Classification").disabled=false;
-                        }
-                        else 
-                            document.getElementById('show').style.visibility = 'hidden';
-
+                        document.getElementById('show').style.visibility = 'visible';
+                        document.getElementById("Classification").disabled=false;
+                        document.getElementById("myButton").style.visibility='visible';
+                        document.getElementById("submit").style.visibility='hidden';
                     }
+                    else
+                    {
+                        document.getElementById('show').style.visibility = 'hidden';
+                        document.getElementById("myButton").style.visibility='hidden';
+                        document.getElementById("submit").style.visibility='visible';
+                    }
+                }
             </script>
          <!--========================================================-->
         <script type="text/javascript">
@@ -439,7 +470,7 @@
                                             <button onclick="loadXMLDoc(this.value);enablebtn();" id="myButton" value="Test for Presence of Nitrogen" disabled>Nitrogen Test</button><br /><br />
                                         
                                     <form action="result_3.jsp" methos="POST">
-                                            <input type="submit" id="submit" value="SUBMIT" >
+                                        <input type="submit" id="submit" value="SUBMIT" style="visibility: hidden;" >
                                         <div class="col-sm-12">
                                             <!--combobox for Classification-->  
                                             <div class="col-sm-12 mb-4"  style="margin-top:20px; ">
