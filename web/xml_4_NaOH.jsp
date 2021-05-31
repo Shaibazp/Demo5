@@ -6,7 +6,7 @@
     response.setContentType("text/xml");
     String sn = request.getParameter("ok");
     System.out.println("abc=" + sn);
-    String mobile1="8975774258";
+    String mobile1=null;
     String name=null;
     String ans=null;
     
@@ -15,38 +15,38 @@
         try
         {   
             Connection conn = db.dbConnect.dbConnection();
-//            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
-//            ResultSet rsr=pst1.executeQuery();
-//            while (rsr.next()) 
-//            {                          
-//                name=rsr.getString(1);
-//                mobile1=rsr.getString(2);
-//                System.out.println("Mobile No : "+mobile1);
-            
-            
-            PreparedStatement pst=conn.prepareStatement("Select * from result_two_copy where mobile=?");
-            pst .setString(1,mobile1);
-            ResultSet rst=pst.executeQuery();
-            while (rst.next()) 
+            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
+            ResultSet rsr=pst1.executeQuery();
+            while (rsr.next()) 
             {                          
-                ans=  rst.getString(1);
-                System.err.println("State : "+ans);
+                name=rsr.getString(1);
+                mobile1=rsr.getString(2);
+                System.out.println("Mobile No : "+mobile1);
             
-                out.println("<emp>");
-                if (ans.equals("Aromatic")) 
-                {
-                    out.println("<Instruction>aa</Instruction>");
-                    out.println("<Inference>The compound can be tested for presence of a carboxylic acid / phenol.</Inference>");
-                } 
-                else if (ans.equals("Aliphatic") )
-                {
-                    out.println("<Instruction>aa</Instruction>");
-                    out.println("<Inference>The compound can be tested for presence of a carboxylic acid.</Inference>");
+            
+                PreparedStatement pst=conn.prepareStatement("Select * from result_two_copy where mobile=?");
+                pst .setString(1,mobile1);
+                ResultSet rst=pst.executeQuery();
+                while (rst.next()) 
+                {                          
+                    ans=  rst.getString(1);
+                    System.err.println("State : "+ans);
+
+                    out.println("<emp>");
+                    if (ans.equals("Aromatic")) 
+                    {
+                        out.println("<Instruction>aa</Instruction>");
+                        out.println("<Inference>The compound can be tested for presence of a carboxylic acid / phenol.</Inference>");
+                    } 
+                    else if (ans.equals("Aliphatic") )
+                    {
+                        out.println("<Instruction>aa</Instruction>");
+                        out.println("<Inference>The compound can be tested for presence of a carboxylic acid.</Inference>");
+                    }
+                    out.println("</emp>");
+
                 }
-                out.println("</emp>");
-            
             }
-            
         }
         catch(Exception e)
         {
@@ -55,16 +55,16 @@
     }
     else if(sn.equals("No"))
     {
-            try 
-            {
-                Connection conn = db.dbConnect.dbConnection();
-//            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
-//            ResultSet rsr=pst1.executeQuery();
-//            while (rsr.next()) 
-//            {                          
-//                name=rsr.getString(1);
-//                mobile1=rsr.getString(2);
-//                System.out.println("Mobile No : "+mobile1);
+        try 
+        {
+            Connection conn = db.dbConnect.dbConnection();
+            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
+            ResultSet rsr=pst1.executeQuery();
+            while (rsr.next()) 
+            {                          
+                name=rsr.getString(1);
+                mobile1=rsr.getString(2);
+                System.out.println("Mobile No : "+mobile1);
 
                 PreparedStatement pst4 = conn.prepareStatement("Select * from result_one where mobile=?");
                 pst4.setString(1, mobile1);
@@ -130,11 +130,12 @@
                     }
 
                 }
-            } 
-            catch (Exception e) 
-            {
-                System.out.println(e);
-            }
+            }    
+        } 
+        catch (Exception e) 
+        {
+            System.out.println(e);
         }
+    }
     
 %>
