@@ -6,7 +6,7 @@
     response.setContentType("text/xml");
     String sn = request.getParameter("ok");
     System.out.println("abc=" + sn);
-    String mobile1=null;
+    String mobile1="8975774258";
     String name=null;
     String ans=null;
     
@@ -15,13 +15,13 @@
         try
         {   
             Connection conn = db.dbConnect.dbConnection();
-            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
-            ResultSet rsr=pst1.executeQuery();
-            while (rsr.next()) 
-            {                          
-                name=rsr.getString(1);
-                mobile1=rsr.getString(2);
-                System.out.println("Mobile No : "+mobile1);
+//            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
+//            ResultSet rsr=pst1.executeQuery();
+//            while (rsr.next()) 
+//            {                          
+//                name=rsr.getString(1);
+//                mobile1=rsr.getString(2);
+//                System.out.println("Mobile No : "+mobile1);
             
             
                 PreparedStatement pst=conn.prepareStatement("Select * from result_one_copy where mobile=?");
@@ -55,7 +55,7 @@
                         out.println("</emp>");
                     }
                 }
-            }
+            //}
         }
         catch(Exception e)
         {
@@ -67,13 +67,13 @@
         try
         {   
             Connection conn = db.dbConnect.dbConnection();
-            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
-            ResultSet rsr=pst1.executeQuery();
-            while (rsr.next()) 
-            {                          
-                name=rsr.getString(1);
-                mobile1=rsr.getString(2);
-                System.out.println("Mobile No : "+mobile1);
+//            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
+//            ResultSet rsr=pst1.executeQuery();
+//            while (rsr.next()) 
+//            {                          
+//                name=rsr.getString(1);
+//                mobile1=rsr.getString(2);
+//                System.out.println("Mobile No : "+mobile1);
             
             
                 PreparedStatement pst=conn.prepareStatement("Select * from result_one_copy where mobile=?");
@@ -108,7 +108,7 @@
                         out.println("</emp>");
                     }
                 }
-            }
+            //}
         }
         catch(Exception e)
         {
@@ -120,13 +120,13 @@
         try
         {   
             Connection conn = db.dbConnect.dbConnection();
-            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
-            ResultSet rsr=pst1.executeQuery();
-            while (rsr.next()) 
-            {                          
-                name=rsr.getString(1);
-                mobile1=rsr.getString(2);
-                System.out.println("Mobile No : "+mobile1);
+//            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
+//            ResultSet rsr=pst1.executeQuery();
+//            while (rsr.next()) 
+//            {                          
+//                name=rsr.getString(1);
+//                mobile1=rsr.getString(2);
+//                System.out.println("Mobile No : "+mobile1);
             
             
                 PreparedStatement pst=conn.prepareStatement("Select * from result_one_copy where mobile=?");
@@ -161,7 +161,7 @@
                         out.println("</emp>");
                     }
                 }
-            }
+            //}
         }
         catch(Exception e)
         {
@@ -173,13 +173,13 @@
         try
         {   
             Connection conn = db.dbConnect.dbConnection();
-            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
-            ResultSet rsr=pst1.executeQuery();
-            while (rsr.next()) 
-            {                          
-                name=rsr.getString(1);    
-                mobile1=rsr.getString(2);
-                System.out.println("Mobile No : "+mobile1);
+//            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
+//            ResultSet rsr=pst1.executeQuery();
+//            while (rsr.next()) 
+//            {                          
+//                name=rsr.getString(1);    
+//                mobile1=rsr.getString(2);
+//                System.out.println("Mobile No : "+mobile1);
             
             
                 PreparedStatement pst=conn.prepareStatement("Select * from result_one_copy where mobile=?");
@@ -214,7 +214,7 @@
                         out.println("</emp>");
                     }
                 }
-            }
+            //}
         }
         catch(Exception e)
         {
@@ -226,13 +226,13 @@
         try
         {   
             Connection conn = db.dbConnect.dbConnection();
-            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
-            ResultSet rsr=pst1.executeQuery();
-            while (rsr.next()) 
-            {                          
-                name=rsr.getString(1);    
-                mobile1=rsr.getString(2);
-                System.out.println("Mobile No : "+mobile1);
+//            PreparedStatement pst1=conn.prepareStatement("select * from mobile_number");
+//            ResultSet rsr=pst1.executeQuery();
+//            while (rsr.next()) 
+//            {                          
+//                name=rsr.getString(1);    
+//                mobile1=rsr.getString(2);
+//                System.out.println("Mobile No : "+mobile1);
             
             
                 PreparedStatement pst=conn.prepareStatement("Select * from result_one_copy where mobile=?");
@@ -266,7 +266,7 @@
                         out.println("</emp>");
                     }
                 }
-            }
+            //}
         }
         catch(Exception e)
         {

@@ -6,17 +6,17 @@
     response.setContentType("text/xml");
     //String sn = request.getParameter("ok");//"start";//
     //System.out.println("abc=" + sn);
-    //String mobile1="8975774258";
+    String mobile1="8975774258";
     
     try 
     {
         Connection con = db.dbConnect.dbConnection();
-        PreparedStatement pstmt = con.prepareStatement("select * from mobile_number");
-        ResultSet rs = pstmt.executeQuery();
-        if (rs.next()) 
-        {
-            String name = rs.getString(1);
-            String mobile1 = rs.getString(2);
+//        PreparedStatement pstmt = con.prepareStatement("select * from mobile_number");
+//        ResultSet rs = pstmt.executeQuery();
+//        if (rs.next()) 
+//        {
+//            String name = rs.getString(1);
+//            String mobile1 = rs.getString(2);
 
             System.out.println("im in 1");
 
@@ -41,8 +41,9 @@
                 else 
                 {
                     
-                    out.println("<meltingfrom>boiling_temp</meltingfrom>");
-                    out.println("<meltingto>boiling_temp</meltingto>");
+                    out.println("<boilingtemp>meltingpoint</boilingtemp>");
+                    out.println("<meltingfrom>"+deri_from+"</meltingfrom>");
+                    out.println("<meltingto>"+deri_to+"</meltingto>");
                 }
 
                 int phy_from1 = Integer.parseInt(deri_from);
@@ -708,14 +709,16 @@
                     } 
                     else 
                     {
-                        out.println("<instruction>error</instruction>");
                         System.out.println("=========== im in else");
-                        out.println("<procedure>The investigation may have gone wrong somewhere. \nDo restart from the begining, or follow below given suggestions. \n\ni) Do consider the names of alternate compounds.\nii) Determine the physical constants, of the test \ncompound and its derivative, and restart the \nexercise.\niii) Refer literature for further suggestions.</procedure>");
+                        
+                        
+                        out.println("<instruction>The investigation may have gone wrong somewhere. \nDo restart from the begining, or follow below given suggestions. \n\ni) Do consider the names of alternate compounds.\nii) Determine the physical constants, of the test \ncompound and its derivative, and restart the \nexercise.\niii) Refer literature for further suggestions.</instruction>");
+//                        out.println("<procedure>The investigation may have gone wrong somewhere. \nDo restart from the begining, or follow below given suggestions. \n\ni) Do consider the names of alternate compounds.\nii) Determine the physical constants, of the test \ncompound and its derivative, and restart the \nexercise.\niii) Refer literature for further suggestions.</procedure>");
                     }
                 }
             }
             out.println("</emp>");
-        }
+        //}
     }
     catch (Exception e) 
     {

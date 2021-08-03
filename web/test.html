@@ -1,4 +1,4 @@
-<FORM ACTION="viewTimeTable.jsp" METHOD="POST">s
+<FORM ACTION="viewTimeTable.jsp" METHOD="POST">
            <BR>
            <INPUT TYPE="TEXT" NAME="id">
            <BR>
@@ -8,7 +8,7 @@
        <% 
            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance?" + "user=root&password=abhi");
            Statement statement = connection.createStatement();
-           String id = request.getParameter("id");  
+           String id = request.getParameter("id");
            ResultSet resultset = statement.executeQuery("select * from time_table_details where time_table_class_id = '" + id + "'") ; 
            if(!resultset.next()) {
            } else {

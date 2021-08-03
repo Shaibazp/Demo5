@@ -6,18 +6,18 @@
     response.setContentType("text/xml");
     String sn = request.getParameter("ok");//"start";//
     System.out.println("abc=" + sn);
-    
+    String mobile1 = "8975774258";
     if (sn.equals("start")) 
     {
         try 
         {
             Connection conn = db.dbConnect.dbConnection();
-            PreparedStatement pstmt1=conn.prepareStatement("select * from mobile_number");
-            ResultSet rsr=pstmt1.executeQuery();
-            if( rsr.next())
-            {
-                String name=rsr.getString(1);
-                String mobile1=rsr.getString(2);
+//            PreparedStatement pstmt1=conn.prepareStatement("select * from mobile_number");
+//            ResultSet rsr=pstmt1.executeQuery();
+//            if( rsr.next())
+//            {
+//                String name=rsr.getString(1);
+//                String mobile1=rsr.getString(2);
 
                 PreparedStatement pst = conn.prepareStatement("Select * from result_one_copy where mobile=?");
                 pst.setString(1, mobile1);
@@ -140,7 +140,7 @@
                         }
                     }
                 }
-            }
+            //}
         } 
         catch (Exception e) 
         {
@@ -204,7 +204,7 @@
         try
         {
             Connection con=db.dbConnect.dbConnection();
-            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='8975774258'");
+            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='"+mobile1+"'");
             ResultSet rst=pst.executeQuery();
             while (rst.next()) 
             {
@@ -255,7 +255,7 @@
         try
         {
             Connection con=db.dbConnect.dbConnection();
-            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='8975774258'");
+            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='"+mobile1+"'");
             ResultSet rst=pst.executeQuery();
             while (rst.next()) 
             {
@@ -306,7 +306,7 @@
         try
         {
             Connection con=db.dbConnect.dbConnection();
-            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='8975774258'");
+            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='"+mobile1+"'");
             ResultSet rst=pst.executeQuery();
             while (rst.next()) 
             {
@@ -357,7 +357,7 @@
         try
         {
             Connection con=db.dbConnect.dbConnection();
-            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='8975774258'");
+            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='"+mobile1+"'");
             ResultSet rst=pst.executeQuery();
             while (rst.next()) 
             {
@@ -408,7 +408,7 @@
         try
         {
             Connection con=db.dbConnect.dbConnection();
-            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='8975774258'");
+            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='"+mobile1+"'");
             ResultSet rst=pst.executeQuery();
             while (rst.next()) 
             {
@@ -459,7 +459,7 @@
         try
         {
             Connection con=db.dbConnect.dbConnection();
-            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='8975774258'");
+            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='"+mobile1+"'");
             ResultSet rst=pst.executeQuery();
             while (rst.next()) 
             {
@@ -510,7 +510,7 @@
         try
         {
             Connection con=db.dbConnect.dbConnection();
-            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='8975774258'");
+            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='"+mobile1+"'");
             ResultSet rst=pst.executeQuery();
             while (rst.next()) 
             {
@@ -561,7 +561,7 @@
         try
         {
             Connection con=db.dbConnect.dbConnection();
-            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='8975774258'");
+            PreparedStatement pst=con.prepareStatement("Select * from result_one_copy where mobile='"+mobile1+"'");
             ResultSet rst=pst.executeQuery();
             while (rst.next()) 
             {

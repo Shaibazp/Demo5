@@ -44,14 +44,33 @@
                     {
                         var some = xmlhttp.responseXML.documentElement;
                         var a = some.getElementsByTagName("boilingtemp")[0].childNodes[0].nodeValue;
-                        var b = some.getElementsByTagName("boilingtempv")[0].childNodes[0].nodeValue;
+                        document.getElementById("Instruction").value = some.getElementsByTagName("instruction")[0].childNodes[0].nodeValue;
+                        document.getElementById("Rational").value = some.getElementsByTagName("result")[0].childNodes[0].nodeValue;
+                        document.getElementById("Procedure").value = some.getElementsByTagName("procedure")[0].childNodes[0].nodeValue;
+                        
+                        var reslt = some.getElementsByTagName("result")[0].childNodes[0].nodeValue;
                         var mpfrom = some.getElementsByTagName("mpfrom")[0].childNodes[0].nodeValue;
                         var mpto = some.getElementsByTagName("mpto")[0].childNodes[0].nodeValue;
+                        document.getElementById("result").value= reslt;
+                        document.getElementById("mfrom").value= mpfrom;
+                        document.getElementById("mto").value= mpto;
+                            
                         var img1 = some.getElementsByTagName("img1")[0].childNodes[0].nodeValue;
                         var img2 = some.getElementsByTagName("img2")[0].childNodes[0].nodeValue;
                         
-//                            document.getElementById("meltingfrom").value = some.getElementsByTagName("meltingfrom")[0].childNodes[0].nodeValue;
-//                            document.getElementById("meltingto").value = some.getElementsByTagName("meltingto")[0].childNodes[0].nodeValue;
+                        if(a=="boilingrrrtemp")
+                        {
+                            var b = some.getElementsByTagName("boilingtempv")[0].childNodes[0].nodeValue;
+                            document.getElementById("aaa").style.visibility='hidden';
+                            document.getElementById("bbb").style.visibility='hidden';
+                        }
+                        else if(a=="meltingpoint")
+                        {
+                            var d = some.getElementsByTagName("meltingfrom")[0].childNodes[0].nodeValue;
+                            var e = some.getElementsByTagName("meltingto")[0].childNodes[0].nodeValue;
+                            document.getElementById("ccc").style.visibility='hidden';
+                        }
+                        
                             var url = 'resources/'+img1;
                             //alert(url);
                             var image = new Image();
@@ -64,12 +83,14 @@
                             image2.src = url2;
                             document.getElementById('container2').appendChild(image2);
                             
+                            document.getElementById("m1").innerHTML= d;
+                            document.getElementById("m2").innerHTML= e;
+                            
                             document.getElementById("Boiling").innerHTML= b;
                             document.getElementById("mpfrom").innerHTML= mpfrom;
                             document.getElementById("mpto").innerHTML= mpto;
-                            document.getElementById("Instruction").value = some.getElementsByTagName("instruction")[0].childNodes[0].nodeValue;
-                            document.getElementById("Rational").value = some.getElementsByTagName("result")[0].childNodes[0].nodeValue;
-                            document.getElementById("Procedure").value = some.getElementsByTagName("procedure")[0].childNodes[0].nodeValue;
+                            
+                            
                         
                         
                     }
@@ -299,29 +320,31 @@
 
                                     <form action="result_7.jsp" methos="POST">
                                         
-                                        <input type="submit" id="submit" value="Proceed"  style="visibility: hidden;">
-                                        <input type="text" id="Result" name="Result" style="visibility: hidden;" > 
+                                        <input type="submit" id="submit" value="Submit" >
+                                        <input type="text" id="result" name="Result"  style="visibility: hidden;">
+                                        <input type="text" id="mfrom" name="mfrom" style="visibility: hidden;" > 
+                                        <input type="text" id="mto" name="mto" style="visibility: hidden;" > 
                                         <div class="col-sm-12"> 
-                                            <div class="col-sm-12 mb-4"  >
+                                            <div class="col-sm-12 mb-4"  id="aaa">
                                                 <div class="custom-control mr-4   custom-control-inline">
                                                     <label for="color">Physical Constant</label>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-12 mb-4"  >
+                                            <div class="col-sm-12 mb-4"  id="bbb">
                                                 <div class="custom-control mr-4   custom-control-inline">
                                                     <label for="color">From</label>
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
-                                                    <p  id="From" ></p>
+                                                    <p  id="m1" ></p>
                                                 </div>
                                                 <div style="margin-left: 50px;" class="custom-control mr-4   custom-control-inline">
                                                     <label for="color">To</label>
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
-                                                        <p  id="To" ></p>
+                                                        <p  id="m2" ></p>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-12 mb-4"  >
+                                            <div class="col-sm-12 mb-4"  id="ccc">
                                                 <div class="custom-control mr-4   custom-control-inline">
                                                     <label for="color"> Boiling Point</label>
                                                 </div>
