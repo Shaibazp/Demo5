@@ -311,7 +311,7 @@
                                                                     <li><a href="#" class="bg-white p-3 w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-package font-md float-left mr-3"></i> More <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                                                     <label style="margin-top: 10px;" class="w-100"> <marquee><h3><b>Video Demonstration</b></h3></marquee></label>-->
                                     <li><a href="#" class="see-video fa bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block" type="button" data-toggle="modal" data-target="#aboutVideo" onclick="loadXMLDoc2();" ><i class="ti-credit-card font-md float-left mr-3"></i>Demonstration<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>  <br>
-                                    <a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2" style="margin-top: -18px;" >Chemical equation</a> 
+                                    <!--<a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2" style="margin-top: -18px;" >Chemical equation</a>--> 
 
 
                                 </ul>
