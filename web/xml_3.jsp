@@ -53,7 +53,7 @@
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
                         out.println("<Inference>" + "The solution is clear and colourless and can be used for three/four tests." + "</Inference>");
-
+                        out.println("<State>https://www.youtube-nocookie.com/embed/LOOvOnohWc0</State>");
                         out.println("</emp>");
                     }
                 }
@@ -98,6 +98,7 @@
                         out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/4b23HVBxjak</State>");
                         //out.println("<Inference>" + "The solution is clear and colourless and can be used for three/four tests." + "</Inference>");
 
                         out.println("</emp>");
@@ -144,6 +145,7 @@
                         out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/yNE4eVwE8yE</State>");
                         //out.println("<Inference>" + "The solution is clear and colourless and can be used for three/four tests." + "</Inference>");
 
                         out.println("</emp>");
@@ -190,6 +192,7 @@
                         out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/yfEoWriPskE</State>");
                         //out.println("<Inference>" + "The solution is clear and colourless and can be used for three/four tests." + "</Inference>");
 
                         out.println("</emp>");
@@ -202,7 +205,4 @@
             System.out.println(e);
         }
     }
-    
-    
-
 %>

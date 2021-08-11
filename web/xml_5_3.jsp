@@ -76,6 +76,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/LOOvOnohWc0</State>");
                                         }
                                         out.println("</emp>");
                                     } 
@@ -93,6 +94,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/meGj1In6D4Q</State>");
                                         }
                                         out.println("</emp>");
                                         
@@ -102,7 +104,8 @@
                                 {
                                     
                                     if (water.equals("Negative") && naoh.equals("Positive")  && result2.equals("Aromatic")) 
-                                    {System.out.println("im ssain Liquid");
+                                    {
+//                                        System.out.println("im ssain Liquid");
                                         PreparedStatement pstmt = conn.prepareStatement("select * from functional_grp_2 where test='Test for presence of a Carboxylic acid liquid s5'");
 
                                         ResultSet rs = pstmt.executeQuery();
@@ -116,6 +119,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/LOOvOnohWc0</State>");
                                         }
                                         out.println("</emp>");
                                     } 
@@ -134,6 +138,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/meGj1In6D4Q</State>");
                                         }
                                         out.println("</emp>");
                                         
@@ -157,7 +162,9 @@
             out.println("<emp>");
             out.println("<Instruction>aa</Instruction>");
             out.println("<Inference>The test compound is a carboxylic acid.</Inference>");
+            out.println("<State>https://www.youtube-nocookie.com/embed/LOOvOnohWc0</State>");
             out.println("<Result>Carboxylic Present</Result>");
+            
             out.println("</emp>");
         } 
         else if (sn.equals("Absent"))
@@ -184,6 +191,7 @@
                             out.println("<emp>");
                             out.println("<Instruction>bb</Instruction>");
                             out.println("<Inference>It seems that the investigation has gone wrong somewhere. Repeat the identification from start.</Inference>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/h7gyJRWrjbg</State>");
                             out.println("</emp>");
                         }
                         else if(result2.equals("Aromatic"))
@@ -191,6 +199,7 @@
                             out.println("<emp>");
                             out.println("<Instruction>cc</Instruction>");
                             out.println("<Inference>The test compound is not a carboxylic acid. It should be subjected to a Phenol group.</Inference>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/UGxxp5PAmT0</State>");
                             out.println("</emp>");
                         }    
                     }

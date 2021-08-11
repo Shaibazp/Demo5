@@ -75,6 +75,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/FsC9gGQ37-4</State>");
                                         }
                                         out.println("</emp>");
                                     } 
@@ -92,6 +93,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                                         }
                                         out.println("</emp>");
                                     }
@@ -115,6 +117,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/M7tsJ8-JdH8</State>");
                                         }
                                         out.println("</emp>");
                                     } 
@@ -132,6 +135,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/FsC9gGQ37-4</State>");
                                         }
                                         out.println("</emp>");
                                     }
@@ -223,6 +227,8 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/FsC9gGQ37-4</State>");
+                        
                     }
                     out.println("</emp>");
                 }
@@ -240,6 +246,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/Q2S7CDuBTOc</State>");
                     }
                     out.println("</emp>");
                 }
@@ -274,6 +281,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/Q2S7CDuBTOc</State>");
                     }
                     out.println("</emp>");
                 }
@@ -291,6 +299,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/z2-qyHNSzAk</State>");
                     }
                     out.println("</emp>");
                 }
@@ -325,6 +334,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/z2-qyHNSzAk</State>");
                     }
                     out.println("</emp>");
                 }
@@ -342,6 +352,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/WVGChZZfvbQ</State>");
                     }
                     out.println("</emp>");
                 }
@@ -376,6 +387,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/WVGChZZfvbQ</State>");
                     }
                     out.println("</emp>");
                 }
@@ -393,6 +405,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/Y4fodpIwal8</State>");
                     }
                     out.println("</emp>");
                 }
@@ -427,6 +440,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/Y4fodpIwal8</State>");
                     }
                     out.println("</emp>");
                 }
@@ -444,6 +458,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/ru2Mu4Yw_RE</State>");
                     }
                     out.println("</emp>");
                 }
@@ -478,6 +493,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/ru2Mu4Yw_RE</State>");
                     }
                     out.println("</emp>");
                 }
@@ -495,6 +511,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/FsC9gGQ37-4</State>");
                     }
                     out.println("</emp>");
                 }
@@ -529,6 +546,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        
                     }
                     out.println("</emp>");
                 }
@@ -580,6 +598,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/T94PHkuydcw</State>");
                     }
                     out.println("</emp>");
                 }
@@ -597,6 +616,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/cajSxnjQC00</State>");
                     }
                     out.println("</emp>");
                 }

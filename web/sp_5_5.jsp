@@ -332,8 +332,9 @@
                         document.getElementById("Procedure").value = some.getElementsByTagName("Procedure")[0].childNodes[0].nodeValue;
                         document.getElementById("Observation").value = some.getElementsByTagName("Observation")[0].childNodes[0].nodeValue;
                         document.getElementById("Reagent").value = some.getElementsByTagName("Reagent")[0].childNodes[0].nodeValue;
+                        var aa= some.getElementsByTagName("State")[0].childNodes[0].nodeValue;
+                        document.getElementById("myFrame").src = aa;
                         var a=some.getElementsByTagName("Ennable")[0].childNodes[0].nodeValue;
-                        
                         if(a=="carbonyl_combo")
                         {
                             document.getElementById("Carbonyls").style.visibility = 'visible';
@@ -545,8 +546,8 @@
                                     <!--                                <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-video-clapper font-md float-left mr-3"></i> Book Movie <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                                                     <li><a href="#" class="bg-white p-3 w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-package font-md float-left mr-3"></i> More <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                                                     <label style="margin-top: 10px;" class="w-100"> <marquee><h3><b>Video Demonstration</b></h3></marquee></label>-->
-                                    <br> <a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2"  >Demonstration</a>  <br>
-                                    <a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2" style="margin-top: -18px;" >Chemical equation</a> 
+                                    <li><a href="#" class="see-video fa bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block" type="button" data-toggle="modal" data-target="#aboutVideo" ><i class="ti-credit-card font-md float-left mr-3"></i>Demonstration<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>  <br>
+                                    <!--<a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2" style="margin-top: -18px;" >Chemical equation</a>--> 
 
 
                                 </ul>
@@ -972,6 +973,16 @@
             </div>
         </div>
 
+        <div class="modal fade" id="aboutVideo" tabindex="-1" role="dialog" aria-labelledby="aboutVideoLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <iframe id="myFrame" class="aboutPlayer" width="100%" height="400" src="qqq.mp4?autoplay=0&showinfo=0&controls=2&rel=0" frameborder="0"  ></iframe><!--https://www.youtube.com/embed/fju9ii8YsGs?autoplay=0&showinfo=0&controls=2&rel=0-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <script src="js/plugin.js"></script>
         <script src="js/scripts.js"></script>
 

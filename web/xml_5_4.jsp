@@ -76,6 +76,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/FsC9gGQ37-4</State>");
                                         }
                                         out.println("</emp>");
                                     } 
@@ -93,6 +94,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/LOOvOnohWc0</State>");
                                         }
                                         out.println("</emp>");
                                     }
@@ -110,6 +112,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                                         }
                                         out.println("</emp>");
                                         
@@ -134,6 +137,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/LOOvOnohWc0</State>");
                                         }
                                         out.println("</emp>");
                                     } 
@@ -152,6 +156,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/FsC9gGQ37-4</State>");
                                         }
                                         out.println("</emp>");
                                     }
@@ -170,6 +175,7 @@
                                             out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                                             out.println("<Observation>" + rs.getString(5) + "</Observation>");
                                             out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                                            out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                                         }
                                         out.println("</emp>");
                                         
@@ -192,6 +198,7 @@
         {
             out.println("<emp>");
             out.println("<Instruction>aa</Instruction>");
+            out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
             out.println("<Inference>The test compound is a Nitro group containing compound.</Inference>");
             out.println("<Result>Nitro Present</Result>");
             out.println("</emp>");
@@ -219,6 +226,7 @@
                         {
                             out.println("<emp>");
                             out.println("<Instruction>bb</Instruction>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                             out.println("<Inference>Perform the test for Amide group.</Inference>");
                             out.println("</emp>");
                         }
@@ -226,6 +234,7 @@
                         {
                             out.println("<emp>");
                             out.println("<Instruction>cc</Instruction>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                             out.println("<Inference>The compound does not contain a Nitro group.</Inference>");
                             out.println("</emp>");
                         }    
@@ -262,6 +271,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -279,6 +289,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -313,6 +324,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -330,6 +342,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -364,6 +377,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -381,6 +395,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -415,6 +430,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -432,6 +448,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -466,6 +483,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -483,6 +501,7 @@
                         out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                         out.println("<Observation>" + rs.getString(5) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                        out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                     }
                     out.println("</emp>");
                 }
@@ -515,6 +534,7 @@
                     out.println("<Procedure>" + rs.getString(4) + "</Procedure>");
                     out.println("<Observation>" + rs.getString(5) + "</Observation>");
                     out.println("<Reagent>" + rs.getString(6) + "</Reagent>");
+                    out.println("<State>https://www.youtube-nocookie.com/embed/6mbzgt6Pgn0</State>");
                 }
                 out.println("</emp>");
             }   

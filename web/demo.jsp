@@ -16,31 +16,74 @@
         <link rel="stylesheet" href="css/style.css">
 
         <!--========================================================-->
-        <script type="text/javascript">
-            function start()
-            {
-                var a = "Subject the test compound to a flame  test for deciding whether it is an aliphatic or an aromatic compound.";
-                document.getElementById("Instruction").value = a;
-            }
-        </script>
+
         <script type="text/javascript">
             function enable()
             {
-                document.getElementById("state").disabled = false;
-            }
 
+                document.getElementById("myButton").disabled = false;
+                document.getElementById("Water").disabled = false;
+                document.getElementById("myButton").style.visibility='visible';
+                document.getElementById("submit").style.visibility='hidden';
+            }
         </script>
         <script type="text/javascript">
-            function hide()
+            function enablebtn()
             {
-                //alert("Getting the message");
-                document.getElementById("start").style.visibility = "hidden";
+                var btn = document.getElementById("myButton");
+                //alert(btn);
+                if (btn.innerHTML == "Click for Ether Test")
+                {
+                    document.getElementById("Diethyl").disabled = false;
+                }
+                else if (btn.innerHTML == "Click for NaOH Test")
+                {
+                    document.getElementById("AqNaOH").disabled = false;
+                }
+                else if (btn.innerHTML == "Click for 5% HCl")
+                {
+                    document.getElementById("AqHCL").disabled = false;
+                }
+                else if (btn.innerHTML == "Click for H2So4")
+                {
+                    document.getElementById("H2So4").disabled = false;
+                }
+
             }
         </script>
+        
 
+
+        <script>
+            function fWater()
+            {
+                if (document.getElementById('Water').value == "Yes")
+                {
+                    document.getElementById("HCL").style.visibility = 'hidden';
+                    document.getElementById('ether').style.visibility = 'visible';
+                    document.getElementById('NaOH').style.visibility = 'hidden';
+                    document.getElementById("myButton").style.visibility='visible';
+                    document.getElementById("submit").style.visibility='hidden';
+                    document.getElementById("myButton").value = "Test for  solubility in Diethyl ether";
+                    document.getElementById("myButton").innerHTML = "Click for Ether Test";
+                    document.getElementById("Inference").value = "The compound should be tested for carboxylic acid / polyhydric alcohols. ";
+                    
+                } 
+                else
+                {
+                    document.getElementById("myButton").style.visibility='visible';
+                    document.getElementById("submit").style.visibility='hidden';
+                    document.getElementById('NaOH').style.visibility = 'visible';
+                    document.getElementById('ether').style.visibility = 'hidden';
+                    document.getElementById("myButton").value = "NaOH Test";
+                    document.getElementById("myButton").innerHTML = "Click for NaOH Test";
+                    document.getElementById("Inference").value = "Solubility of the compound should be tested in Aqueous Sodium Hydroxide (5 %).";
+                }
+            }
+        </script>
         <!--========================================================-->
         <script type="text/javascript">
-            function loadXMLDoc1(str)
+            function loadXMLDoc(str)
             {
                 var xmlhttp;
 
@@ -51,7 +94,7 @@
                     document.getElementById("txtHint").innerHTML = "";
                     return;
                 }
-                var urls = "xml_2.jsp?ok=" + str
+                var urls = "xml_4.jsp?ok=" + str
                 if (window.XMLHttpRequest)
                 {// code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttp = new XMLHttpRequest();
@@ -71,6 +114,8 @@
                         document.getElementById("Procedure").value = some.getElementsByTagName("Procedure")[0].childNodes[0].nodeValue;
                         document.getElementById("Observation").value = some.getElementsByTagName("Observation")[0].childNodes[0].nodeValue;
                         document.getElementById("Reagent").value = some.getElementsByTagName("Reagent")[0].childNodes[0].nodeValue;
+                        var a= some.getElementsByTagName("State")[0].childNodes[0].nodeValue;
+                        document.getElementById("myFrame").src = a;
                         document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
                     }
                 }
@@ -78,21 +123,19 @@
                 xmlhttp.send();
             }
         </script>  
-
         <script type="text/javascript">
-            function loadXMLDoc2()
+            function loadDATA1(str)
             {
                 var xmlhttp;
-                var str="solidliquid";
-
-                //var keys = document.dummy.state.value
 
                 if (str == "")
                 {
                     document.getElementById("txtHint").innerHTML = "";
                     return;
                 }
-                var urls = "xml_2.jsp?ok=" + str
+
+
+                var urls = "xml_4_diethyl.jsp?ok=" + str
                 if (window.XMLHttpRequest)
                 {// code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttp = new XMLHttpRequest();
@@ -107,16 +150,158 @@
                     if (xmlhttp.readyState == 4)
                     {
                         var some = xmlhttp.responseXML.documentElement;
-                        var dataq = some.getElementsByTagName("State")[0].childNodes[0].nodeValue;
-                        document.getElementById("myFrame").src = dataq;
-                        alert(dataq)
+                        document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
+                        var a= some.getElementsByTagName("op")[0].childNodes[0].nodeValue;
+                        if(a=="aa")
+                        {
+                            document.getElementById("myButton").style.visibility='hidden';
+                            document.getElementById("submit").style.visibility='visible';
+                        }
+                        else if(a=="bb")
+                        {
+                            document.getElementById("myButton").style.visibility='hidden';
+                            document.getElementById("submit").style.visibility='visible';
+                        }
                     }
                 }
+
                 xmlhttp.open("GET", urls, true);
                 xmlhttp.send();
             }
-        </script> 
-        
+        </script>
+        <script type="text/javascript">
+            function loadDATA2(str)
+            {
+                var xmlhttp;
+
+                if (str == "")
+                {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
+
+
+                var urls = "xml_4_NaOH.jsp?ok=" + str
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+
+                } else
+                {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    System.out.println("hello");
+                }
+                xmlhttp.onreadystatechange = function ()
+                {
+                    if (xmlhttp.readyState == 4)
+                    {
+                        var some = xmlhttp.responseXML.documentElement;
+                        document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
+                        var a = some.getElementsByTagName("Instruction")[0].childNodes[0].nodeValue;
+                        if(a=="aa")
+                        {
+                            document.getElementById("myButton").style.visibility='hidden';
+                            document.getElementById("submit").style.visibility='visible';
+                        }
+                        else if(a=="bb")
+                        {
+                            document.getElementById("HCL").style.visibility = 'visible';
+                            document.getElementById("myButton").value = "HCL Test";
+                            document.getElementById("myButton").innerHTML = "Click for 5% HCl";
+                            document.getElementById("myButton").style.visibility='visible';
+                            document.getElementById("submit").style.visibility='hidden';
+                        }
+                        else if(a=="cc")
+                        {
+                            //alert("Click for H2So4");
+                            document.getElementById("h2o").style.visibility = 'visible';
+                            document.getElementById("myButton").value = "H2SO4 Test";
+                            document.getElementById("myButton").innerHTML = "Click for H2So4";
+                            document.getElementById("myButton").style.visibility='visible';
+                            document.getElementById("submit").style.visibility='hidden';
+                        }
+                    }
+                }
+
+                xmlhttp.open("GET", urls, true);
+                xmlhttp.send();
+            }
+        </script>
+        <script type="text/javascript">
+            function loadDATA3(str)
+            {
+                var xmlhttp;
+
+                if (str == "")
+                {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
+
+
+                var urls = "xml_4_HCl.jsp?ok=" + str
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+
+                } else
+                {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    System.out.println("hello");
+                }
+                xmlhttp.onreadystatechange = function ()
+                {
+                    if (xmlhttp.readyState == 4)
+                    {
+                        var some = xmlhttp.responseXML.documentElement;
+                        document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
+                        document.getElementById("myButton").style.visibility='hidden';
+                        document.getElementById("submit").style.visibility='visible';
+                        // document.getElementById("sp").value = some.getElementsByTagName("empaddr")[0].childNodes[0].nodeValue;
+                    }
+                }
+
+                xmlhttp.open("GET", urls, true);
+                xmlhttp.send();
+            }
+        </script>
+        <script type="text/javascript">
+            function loadDATA4(str)
+            {
+                var xmlhttp;
+
+                if (str == "")
+                {
+                    document.getElementById("txtHint").innerHTML = "";
+                    return;
+                }
+
+
+                var urls = "xml_4_H2So4.jsp?ok=" + str
+                if (window.XMLHttpRequest)
+                {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+
+                } else
+                {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    System.out.println("hello");
+                }
+                xmlhttp.onreadystatechange = function ()
+                {
+                    if (xmlhttp.readyState == 4)
+                    {
+                        var some = xmlhttp.responseXML.documentElement;
+                        document.getElementById("Inference").value = some.getElementsByTagName("Inference")[0].childNodes[0].nodeValue;
+                        document.getElementById("myButton").style.visibility='hidden';
+                        document.getElementById("submit").style.visibility='visible';
+                    }
+                }
+
+                xmlhttp.open("GET", urls, true);
+                xmlhttp.send();
+            }
+        </script>
         <script type="text/javascript">
 
             function auto_height(elem) {  /* javascript */
@@ -312,8 +497,8 @@
                                     <!--                                <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-video-clapper font-md float-left mr-3"></i> Book Movie <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                                                     <li><a href="#" class="bg-white p-3 w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-package font-md float-left mr-3"></i> More <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                                                     <label style="margin-top: 10px;" class="w-100"> <marquee><h3><b>Video Demonstration</b></h3></marquee></label>-->
-                                    <li><a href="#" class="see-video fa bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block" type="button" data-toggle="modal" data-target="#aboutVideo" onclick="loadXMLDoc2();" ><i class="ti-credit-card font-md float-left mr-3"></i>Demonstration<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>  <br>
-                                    <a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2" style="margin-top: -18px;" >Chemical equation</a> 
+                                    <li><a href="#" class="see-video fa bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block" type="button" data-toggle="modal" data-target="#aboutVideo" ><i class="ti-credit-card font-md float-left mr-3"></i>Demonstration<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>  <br>
+                                    <!--<a href="#" class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2" style="margin-top: -18px;" >Chemical equation</a>--> 
 
 
                                 </ul>
@@ -323,7 +508,7 @@
 
                         <div class="col-lg-6 pl-md--2 pr-md--2 mt-sm--3" >
                             <div class="row">
-                                <div class="col-sm-12 mb-2"><div class="fw-700 font-xxl mb-3" style="margin-top: -15px;">Preliminary Observations</div>
+                                <div class="col-sm-12 mb-2"><div class="fw-700 font-xxl mb-3" style="margin-top: -15px;">Solubility Tests </div>
 
                                     <div class="col-sm-12" style="margin-top: -15px;" >Instruction<textarea id="Instruction" name="Instruction" rows="2"   class="auto_height"   oninput="auto_height(this)" name="instuction"    style="width: 100%; margin-top: -5px;" > </textarea></div>
                                     <div class="col-sm-12" style="margin-top: -10px;">Rational<textarea id="Rational" name="Rational" readonly rows="2" class="auto_height" oninput="auto_height(this)" style="width: 100%; margin-top: -5px;"> </textarea></div>
@@ -336,25 +521,83 @@
 
                                     <div class="col-sm-6">
                                         <a href="#"  class="d-block text-center bg-current border-0 w-100 form-bttn fw-500 rounded-lg text-white member-bttn2">Proceed to Recharge</a></div>
-                                    <button id="start" onclick="start();enable();hide();">Start</button>
+                                    <button id="start" onclick="enable();loadXMLDoc(this.value);" value="Test for  solubility in water">Start</button>
+                                    <button onclick="loadXMLDoc(this.value);enablebtn();" id="myButton" value="submit" disabled>Submit</button><br /><br />
 
-
-                                    <form action="result_2.jsp" methos="POST">
-                                        <input type="submit" id="submit" value="SUBMIT" >
+                                    <form action="result_4.jsp" methos="POST">
+                                        <input type="submit" id="submit" value="SUBMIT"  style="visibility: hidden;">
                                         <div class="col-sm-12">
                                             <!--combobox for Classification-->  
                                             <div class="col-sm-12 mb-4"  style="margin-top:20px; ">
                                                 <div class="custom-control mr-4   custom-control-inline">
-                                                    <label for="state">Classification :</label>
+                                                    <label for="state">Water :</label>
                                                 </div>
                                                 <div class="custom-control mr-0   custom-control-inline">
-                                                    <select id="state"name="state" style="width: 200px;" onchange="loadXMLDoc1(this.value);" disabled>
+                                                    <select id="Water" name="Water" style="width: 200px;" onchange="fWater();" disabled>
                                                         <option>Select</option>  
-                                                        <option value="Aliphatic">Aliphatic</option>
-                                                        <option value="Aromatic">Aromatic</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
                                                     </select>   
                                                 </div>
-                                            </div>  
+                                            </div> 
+
+                                            <!--combobox for Classification-->  
+                                            <div class="col-sm-12 mb-4"  style="margin-top:20px;visibility: hidden; " id="ether">
+                                                <div class="custom-control mr-4   custom-control-inline">
+                                                    <label for="state">Diethyl Ether :</label>
+                                                </div>
+                                                <div class="custom-control mr-0   custom-control-inline">
+                                                    <select id="Diethyl" name="Diethyl" style="width: 200px;" onchange="loadDATA1(this.value)" disabled>
+                                                        <option>Select</option>  
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>   
+                                                </div>
+                                            </div>
+
+                                            <!--combobox for Classification-->  
+                                            <div class="col-sm-12 mb-4"  style="margin-top:20px;visibility: hidden " id="NaOH">
+                                                <div class="custom-control mr-4   custom-control-inline">
+                                                    <label for="state">Aq. NaOH(5%) :</label>
+                                                </div>
+                                                <div class="custom-control mr-0   custom-control-inline">
+                                                    <select id="AqNaOH" name="AqNaOH" style="width: 200px;" onchange="loadDATA2(this.value)" disabled>
+                                                        <option>Select</option>  
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>   
+                                                </div>
+                                            </div>
+
+                                            <!--combobox for Classification-->  
+                                            <div class="col-sm-12 mb-4"  style="margin-top:20px;visibility: hidden; " id="HCL">
+                                                <div class="custom-control mr-4   custom-control-inline">
+                                                    <label for="state">Aq. HCL(5%) :</label>
+                                                </div>
+                                                <div class="custom-control mr-0   custom-control-inline">
+                                                    <select id="AqHCL" name="AqHCL" style="width: 200px;" onchange="loadDATA3(this.value);" disabled>
+                                                        <option>Select</option>  
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>   
+                                                </div>
+                                            </div>
+
+                                            <!--combobox for Classification-->  
+                                            <div class="col-sm-12 mb-4"  style="margin-top:20px;visibility: hidden; " id="h2o">
+                                                <div class="custom-control mr-4   custom-control-inline">
+                                                    <label for="state">H2So4 :</label>
+                                                </div>
+                                                <div class="custom-control mr-0   custom-control-inline">
+                                                    <select id="H2So4" name="H2So4" style="width: 200px;" onchange="loadDATA4(this.value);" disabled>
+                                                        <option>Select</option>  
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>   
+                                                </div>
+                                            </div>
+                                            
+                                            
                                         </div>
                                     </form>
                                 </div>
@@ -446,9 +689,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
 
                     </div>
 
@@ -623,10 +863,6 @@
             </div>
         </div>
 
-
-
-        <script src="js/plugin.js"></script>
-        <script src="js/scripts.js"></script>
         <div class="modal fade" id="aboutVideo" tabindex="-1" role="dialog" aria-labelledby="aboutVideoLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -636,8 +872,9 @@
                 </div>
             </div>
         </div>
-        
-        
+        <script src="js/plugin.js"></script>
+        <script src="js/scripts.js"></script>
+
     </body>
 
 

@@ -44,14 +44,16 @@
                         if (ans.equals("Solid")) 
                         {
                             out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/LOOvOnohWc0</State>");
                         } 
                         else if (ans.equals("Liquid")) 
                         {
                             out.println("<Procedure>" + rs.getString(7) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/LOOvOnohWc0</State>");
                         }
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
-
+                        
                         out.println("</emp>");
                     }
                 }
@@ -97,10 +99,12 @@
                         if (ans.equals("Solid")) 
                         {
                             out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/yfEoWriPskE</State>");
                         } 
                         else if (ans.equals("Liquid")) 
                         {
                             out.println("<Procedure>" + rs.getString(7) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/yfEoWriPskE</State>");
                         }
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
@@ -150,10 +154,12 @@
                         if (ans.equals("Solid")) 
                         {
                             out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/bQmrYg3biS0</State>");
                         } 
                         else if (ans.equals("Liquid")) 
                         {
                             out.println("<Procedure>" + rs.getString(7) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/bQmrYg3biS0</State>");
                         }
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
@@ -203,10 +209,12 @@
                         if (ans.equals("Solid")) 
                         {
                             out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/tVpQSwiAOe4</State>");
                         } 
                         else if (ans.equals("Liquid")) 
                         {
                             out.println("<Procedure>" + rs.getString(7) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/tVpQSwiAOe4</State>");
                         }
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
@@ -255,10 +263,12 @@
                         if (ans.equals("Solid")) 
                         {
                             out.println("<Procedure>" + rs.getString(6) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/C1uHQaXt-Lk</State>");
                         } 
                         else if (ans.equals("Liquid")) 
                         {
                             out.println("<Procedure>" + rs.getString(7) + "</Procedure>");
+                            out.println("<State>https://www.youtube-nocookie.com/embed/C1uHQaXt-Lk</State>");
                         }
                         out.println("<Observation>" + rs.getString(8) + "</Observation>");
                         out.println("<Reagent>" + rs.getString(9) + "</Reagent>");
