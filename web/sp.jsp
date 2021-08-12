@@ -475,7 +475,7 @@
 
 
                                     <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-700 text-grey-700 font-xsss d-inline-block"><i class="ti-mobile font-md float-left mr-3"></i>Preliminary Observations<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
-                                    <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-700 text-grey-700 font-xsss d-inline-block"><i class="ti-mobile font-md float-left mr-3"></i>Broad Classification<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
+                                    <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-700 text-grey-500 font-xsss d-inline-block"><i class="ti-mobile font-md float-left mr-3"></i>Broad Classification<i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                     <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-pie-chart font-md float-left mr-3"></i> Element Detection <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                     <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-stats-up font-md float-left mr-3"></i> Solubility Tests  <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
                                     <li><a href="#" class="bg-white p-3 border-bottom-light w-100 fw-600 text-grey-500 font-xsss d-inline-block"><i class="ti-harddrives font-md float-left mr-3"></i> Functional Group Identify  <i class="ti-angle-right float-right text-grey-400 mt-1"></i></a></li>
