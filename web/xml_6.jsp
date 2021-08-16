@@ -5,7 +5,7 @@
     response.setContentType("text/xml");
     String sn = request.getParameter("ok");//"start";//
     System.out.println("abc=" + sn);
-    String mobile1 = "8975774258";
+    String mobile1 = (String)session.getAttribute("Userid").toString();
 
     try 
     {
