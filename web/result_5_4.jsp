@@ -12,7 +12,7 @@
     String liberman=request.getParameter("Liebermann");
     String nitro=request.getParameter("Nitro");
     String amide=request.getParameter("Amide");
-    String mobile11 ="8975774258";
+    String mobile11 = (String)session.getAttribute("Userid").toString();
 
 
     if (amine_ali.equals("Primary")&& rimini.equals("Positive")) 

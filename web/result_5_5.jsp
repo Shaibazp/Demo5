@@ -13,8 +13,8 @@
     String alcohol_classi=request.getParameter("Classification");
     String aryl=request.getParameter("Aryl-Alkyl");
 
-    String mobile1 ="8975774258";
-    String mobile11 ="8975774258";
+    String mobile1 = (String)session.getAttribute("Userid").toString();
+    
     if (carbonal.equals("Present")) 
     {
         try 
@@ -49,7 +49,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                     ps.close();
@@ -72,7 +72,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                 }
@@ -116,7 +116,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                     ps.close();
@@ -139,7 +139,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                 }
@@ -184,7 +184,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                     ps.close();
@@ -207,7 +207,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                 }
@@ -252,7 +252,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                     ps.close();
@@ -275,7 +275,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                 }
@@ -319,7 +319,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                     ps.close();
@@ -342,7 +342,7 @@
                     ps.setString(13, "NA");
                     ps.setString(14, "NA");
                     ps.setString(15, result);
-                    ps.setString(16, mobile11);
+                    ps.setString(16, mobile1);
                     ps.executeUpdate();
                     response.sendRedirect("sp_6.jsp");
                 }

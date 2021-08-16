@@ -2,7 +2,7 @@
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String state=request.getParameter("state");
-    String mobile1="8975774258";
+    String mobile1=(String)session.getAttribute("Userid").toString();
     
 System.out.println(state );
 

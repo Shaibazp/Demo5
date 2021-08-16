@@ -7,7 +7,7 @@
     String mp_to = request.getParameter("MeltingTo");
     int mp_too = Integer.parseInt(mp_to);
     int mp_fromm = Integer.parseInt(mp_from); 
-    String mobile1 ="8975774258";
+    String mobile1 = (String)session.getAttribute("Userid").toString();
         
     try 
     {

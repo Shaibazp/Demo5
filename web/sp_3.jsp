@@ -1,4 +1,5 @@
 <%@page import="java.sql.*"%>
+<%session.getAttribute("Userid").toString();%>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,6 +1,7 @@
 <%@page import="java.sql.*"%>
+
 <%
-    String mobile1 = "8975774258";
+    String mobile1 = (String)session.getAttribute("Userid").toString();
     
     try 
     {

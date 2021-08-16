@@ -5,7 +5,7 @@
     String result = request.getParameter("Result");
     String mp_from = request.getParameter("mfrom");
     String mp_to = request.getParameter("mto");
-    String mobile1 ="8975774258";
+    String mobile1 = (String)session.getAttribute("Userid").toString();
         System.out.println("result :"+result+"mp_from : "+mp_from+"mp_to :"+mp_to);
     try 
     {

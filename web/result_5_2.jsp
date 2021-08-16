@@ -11,7 +11,7 @@
     String tollens=request.getParameter("Tollens");
     String felhings=request.getParameter("Felhing");
     String amide=request.getParameter("Amide");
-    String mobile1="8975774258";
+    String mobile1= (String)session.getAttribute("Userid").toString();
     if (Carboxylic.equals("Present")) 
     {
         try 

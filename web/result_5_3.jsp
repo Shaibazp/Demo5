@@ -8,7 +8,7 @@
     String carboxylic=request.getParameter("Carboxylic");
     System.out.println(" aaaa : "+carboxylic);
     String Phenol=request.getParameter("Phenol");
-    String mobile11 ="8975774258";
+    String mobile11 = (String)session.getAttribute("Userid").toString();
     
     
     if (carboxylic.equals("Absent")) 

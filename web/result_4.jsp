@@ -6,7 +6,7 @@
     String naoh=request.getParameter("AqNaOH");
     String hcl=request.getParameter("AqHCL");
     String h2so4=request.getParameter("H2So4");
-    String mobile1="8975774258";
+    String mobile1=(String)session.getAttribute("Userid").toString();
     
     System.out.println("water : "+water+ "ether : "+ether+"naoh : "+naoh+"hcl : "+hcl+"h2so4 : "+h2so4);
     

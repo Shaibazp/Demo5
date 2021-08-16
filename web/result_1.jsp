@@ -7,7 +7,8 @@
     String mp_from=request.getParameter("MeltingFrom");
     String mp_to=request.getParameter("MeltingTo");
     String boiling_temp=request.getParameter("Boiling");
-    String mobile1="8975774258";
+    String mobile1=(String)session.getAttribute("Userid").toString();
+    //System.out.println(mobile1);
     
     System.out.println(state +"=="+colour+"=="+odour+"=="+mp_from+"=="+mp_to+"=="+boiling_temp);
 

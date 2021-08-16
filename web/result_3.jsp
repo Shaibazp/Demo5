@@ -5,7 +5,7 @@
     String Sulphur=request.getParameter("Sulphur");
     String Halogen=request.getParameter("Halogen");
     String Classification=request.getParameter("Classification");
-    String mobile1="8975774258";
+    String mobile1=(String)session.getAttribute("Userid").toString();
 
     if(Halogen.equals("Positive"))
     {

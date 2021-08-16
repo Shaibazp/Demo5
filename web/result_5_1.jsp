@@ -18,7 +18,7 @@
     String phenol=request.getParameter("Phenol");
     System.out.println("phenol : "+phenol);
     
-    String mobile1="8975774258"; 
+    String mobile1=(String)session.getAttribute("Userid").toString();
     
     
     if (phenol.equals("Present")) 
